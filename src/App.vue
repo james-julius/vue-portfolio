@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Nav/>
     <LeftSide :image="{
       src: '',
       alt: 'A showcase image'
@@ -9,12 +10,14 @@
 </template>
 
 <script>
+import Nav from './components/Nav/Nav';
 import LeftSide from './components/LeftSide/LeftWrapper';
 import RightSide from './components/RightSide/RightWrapper';
 
 export default {
   name: 'App',
   components: {
+    Nav,
     LeftSide,
     RightSide
   }

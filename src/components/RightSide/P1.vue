@@ -8,8 +8,11 @@
         </div>
 
         <div class="arrow">
-            <p>View my portfolio</p>
-            <img src="../../assets/ctarrow.svg" />
+            <p>DISCOVER <br/>MY</p>
+            <span class="arrow-container">
+                <p class="upright-p">PORTFOLIO</p>
+                <img :click="nextPage" src="../../assets/ctarrow.svg" />
+            </span>
         </div>
         <div class="link-list">
             <ul>
@@ -30,6 +33,11 @@ export default {
         heading: String,
         subHeading: String,
         content: String
+    },
+    methods: {
+        nextPage() {
+
+        }
     }
 }
 </script>
@@ -58,12 +66,34 @@ export default {
     }
 
     .arrow {
-        grid-area: 8/2/15/4;
-        // background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        grid-area: 8/1/17/2;
+        background-color: lightcyan;
+        padding-left: 1vw;
         // border-bottom: 1px solid aquamarine;
         p {
-            font-size: .8rem;
+            font-size: 1.2rem;
             font-weight: bold;
+            text-align: left;
+            &.upright-p {
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+                letter-spacing: -5px;
+                margin: 0px;
+                font-size: 1.2rem;
+            }
+        }
+        .arrow-container {
+            display: flex;
+            p {
+                text-align: left;
+            }
+            img {
+                width: 50%;
+            }
         }
     }
 
@@ -88,10 +118,11 @@ export default {
                 justify-content: center;
                 align-items: center;
                 flex: 1 1 auto;
-                background-color: beige;
+                background-color: lemonchiffon;
                 font-weight: bold;
                 font-size: 1.15rem;
                 cursor: pointer;
+                border-bottom: 5px solid crimson;
             }
         }
     }
