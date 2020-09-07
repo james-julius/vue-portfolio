@@ -1,22 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <LeftSide :image="{
+      src: '',
+      alt: 'A showcase image'
+    }" />
+    <RightSide />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LeftSide from './components/LeftSide/LeftWrapper';
+import RightSide from './components/RightSide/RightWrapper';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    LeftSide,
+    RightSide
   }
 }
+
 </script>
 
-<style>
+<style lang="scss">
+body {
+  margin: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,5 +33,21 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;
+  padding: 0px;
+
+    .left-side {
+        height: 100vh;
+        width: 50vw;
+        background-color: crimson;
+    }
+    .right-side {
+        height: 100vh;
+        width: 50vw;
+        background-color: #fff6ec;
+    }
 }
 </style>
