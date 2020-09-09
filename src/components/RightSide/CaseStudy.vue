@@ -3,32 +3,23 @@
         <div class="headline">
             <h1>{{heading}}</h1>
         </div>
-        <div class="sub-heading">
-            <h3>{{subHeading}}</h3>
+        <div class="content">
+            <p>{{content}}</p>
         </div>
-
-        <div class="arrow">
-            <p>Discover<br/>My</p>
-            <span class="arrow-container">
-                <p class="upright-p">Portfolio</p>
-                <img :click="nextPage" src="../../assets/ctarrow.svg" />
-            </span>
-        </div>
-        <div class="link-list">
-            <ul>
-                <li>About Me</li>
-                <li>Client Projects</li>
-                <li>Side Projects</li>
-                <li>Get a Quote</li>
-            </ul>
-        </div>
-        <span class="sideline"/>
-        <!-- <button>Discover my portfolio</button> -->
+        <Technologies
+            :stack="['laravel', 'wordpress', 'woocommerce', 'mysql']"
+        />
     </div>
 </template>
+
 <script>
+import Technologies from './Technologies';
+
 export default {
     name: 'PageOne',
+    components: {
+        Technologies
+    },
     props: {
         heading: String,
         subHeading: String,
@@ -42,7 +33,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .pageOne {
     height: 100%;
     width: 100%;
@@ -57,12 +48,14 @@ export default {
         text-align: left;
     }
     .headline {
-        grid-area: 5/1/6/8;
+        grid-area: 3/1/4/8;
     }
-    .sub-heading {
+    .content {
         display: flex;
         align-items: center;
-        grid-area: 6/1/7/8;
+        text-align: left;
+        grid-area: 4/1/7/8;
+        margin-left: 2vw;
     }
 
     .arrow {
@@ -102,6 +95,10 @@ export default {
                 bottom: 2px;
             }
         }
+    }
+
+    .technologies {
+
     }
 
     .sideline {
