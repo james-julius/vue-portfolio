@@ -22,7 +22,7 @@ nav {
     width: 400px;
     top: 3vh;
     height: 5vh;
-    background-color: lemonchiffon;
+    // background-color: lemonchiffon;
     ul {
         display: flex;
         height: 100%;
@@ -36,6 +36,8 @@ nav {
             align-items: center;
             justify-content: center;
             border-right: 5px solid crimson;
+            border-left: 1px solid crimson;
+            font-weight: bold;
             cursor: pointer;
         }
     

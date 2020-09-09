@@ -1,12 +1,14 @@
 <template>
     <div class="technologies">
+        <div class="tech-header">
+            <h3>Technologies Used</h3>
+        </div>
         <ul>
             <template v-for="tech in validatedStack">
                 <Tech 
                     :key="tech.name"
                     :name="tech.name"
-                    :imageSrc="require(`@/assets/tech/${tech.imageSrc}`)"
-                    :textClasses="tech.textClasses"
+                    :imageSrc="tech.imageSrc"
                     :logoClasses="tech.logoClasses"
                 />
             </template>
@@ -44,7 +46,13 @@ export default {
                 },
                 'wordpress': {
                     name: 'Wordpress',
-                    imageSrc: 'wordpress.png'
+                    imageSrc: 'wordpress.png',
+                    imgClasses: ''
+                },
+                'woocommerce': {
+                    name: 'WooCommerce',
+                    imageSrc: 'woologo.svg',
+                    imgClasses: ''
                 },
                 'mysql': {
                     name: 'MySQL',
@@ -73,29 +81,14 @@ export default {
 <style lang="scss">
     .technologies {
         grid-area: 7/9/17/13;
-        background-color: grey;
+        margin-bottom: 10px;
+        .tech-header {
+            border-bottom: 1px solid grey;
+        }
         ul {
             list-style: none;
             margin: 0px;
             padding: 0px;
-            li {
-                display: flex;
-                flex: 1 1 auto;
-                justify-content: flex-start;
-                align-items: center;
-                .logo-container {
-                    height: 100%;
-                    width: 30%;
-                    .tech-logo {
-                        height: 30px;
-                        width: 30px;
-                        width: auto;
-                    }
-                    .text-container {
-                        width: 70%;
-                    }
-                }
-            }
         }
     }
 </style>

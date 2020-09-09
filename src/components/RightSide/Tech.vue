@@ -1,9 +1,9 @@
 <template>
     <li>
-        <span :class="logoClasses">
-            <img :src="imageSrc" :alt="imageAlt"/>
+        <span :class="'logo-container ' + logoClasses">
+            <img :src="require(`@/assets/tech/${imageSrc}`)" :alt="imageAlt" style="max-width: 50px; height: 50px; width: auto;"/>
         </span>
-        <span :class="textClasses">
+        <span class="'text-container">
             <p>{{name}}</p>
         </span>
     </li>
@@ -25,11 +25,31 @@ export default {
         logoClasses: {
             type: String,
             default: 'logo-container'
-        },
-        textClasses: {
-            type: String,
-            default: 'text-container'
         }
     }
 }
 </script>
+
+<style lang="scss" scoped>
+    li {
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: flex-start;
+        align-items: center;
+        .logo-container {
+            height: 100%;
+            width: 30%;
+            .tech-logo {
+                height: 30px;
+                width: 30px;
+                width: auto;
+            }
+            .text-container {
+                width: 70%;
+                p {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+</style>
