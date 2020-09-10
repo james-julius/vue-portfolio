@@ -1,4 +1,5 @@
 @use "sass:math";
+@import './iPhoneSVGs.scss';
 
 // Carousel configuration
 // Number of images
@@ -9,7 +10,9 @@ $theta: 2 * $PI / $n;
 $item-spacing: 50px;
 // Z-Index
 $viewer-distance: 800px;
-$item-width: 22.5vw;
+$iPhone11Ratio: 2.11;
+$item-width: 22vw;
+$item-height: $item-width * $iPhone11Ratio;
 $apothem: $item-width / (2 * (math.tan($PI / $n)));
 .carousel {
     width: 100%;
@@ -17,6 +20,7 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
     max-height: 75%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     perspective: $viewer-distance;
     align-items: center;
     padding: 20px;
@@ -25,17 +29,19 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
     }
     figure {
         // width: $item-width;
-        margin-top: auto;
         margin-bottom: auto;
         transform-style: preserve-3d;
         transition: transform 2s;
         transform-origin: 50% 50% (-$apothem);
         
-        img {
-            height: auto;
+        .img-container {
+            height: 75vh;
             width: $item-width;
             box-sizing: border-box;
             padding: 0 $item-spacing / 2;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 2;
             &:not(:first-of-type) {
                 position: absolute;
                 left: 0;
@@ -48,17 +54,35 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
                     transform: rotateY(#{($i - 1) * $theta}rad);
                 }
             }
+            
+            img, iframe {
+                position: relative;
+                top: 2.5%;
+                right: 2%;
+                height: 105%;
+                width: 105%;
+                z-index: 1;
+                border-radius: 35px;
+            }
+            &:before {
+                content: $iphone-back;
+                position: absolute;
+                height: $item-height;
+                width: $item-width;
+                top: 0;
+                left: 0;
+                z-index: 0;
+            }
+            &:after {
+                content: $iphone-front;
+                position: absolute;
+                height: $item-height;
+                width: $item-width;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                pointer-events: none;
+            }
         }
-    }
-    .cricketVisionMob {
-        grid-area: 2/7/10/11;
-    }
-    .uHealthMob {
-        grid-area: 8/2/16/6;
-
-    }
-    .volunteerSafeMob {
-        grid-area: 5/5/13/9;
-
     }
 }
