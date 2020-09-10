@@ -8,7 +8,7 @@
             <img class="uHealthMob" src="../../assets/uHealthMobile.png"/>
             <img class="volunteerSafeMob" src="../../assets/volunteerSafeMobile.png"/>
         </figure>
-    <button :click="setIndex(currentIndex)"/>
+    <button @click="setIndex(currentIndex)">Rotate</button>
     </div>
 </template>
 

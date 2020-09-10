@@ -41,7 +41,7 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
                 left: 0;
                 top: 0;
                 transform-origin: 50% 50% (-$apothem);
-                opacity: 0.9;
+                // opacity: 0.9;
             }
             @for $i from 2 through $n {
                 &:nth-child(#{$i}) {
