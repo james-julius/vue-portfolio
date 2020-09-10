@@ -1,0 +1,56 @@
+@use "math";
+
+// Carousel configuration
+// Number of images
+$n: 3;
+$PI: 3.14159265359;
+// 
+$theta: 2 * $PI / $n;
+// Spacing between the images. This is halved as it will be used on the left and right of each image
+$item-spacing: 40px / 2;
+// Z-Index
+$viewer-distance: 800px;
+$item-width: 100px;
+$tanVal: math.tan(100);
+$apothem: $item-width / (2 * (math.tan($PI / $n)));
+.carousel {
+    width: 75%;
+    height: 75%;
+    max-height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > * {
+        flex: 0 0 auto;
+    }
+    figure {
+        // width: $item-width;
+        height: 100%;
+        width: 100%;
+        transform-style: preserve-3d;
+        transform-origin: 50% 50% (-$apothem);
+        @for $i from 2 through $n {
+            &:nth-child(#{$i}) {
+                transform: rotateY(#{($i - 1) * $theta}rad);
+            }
+        }
+        img {
+            height: auto;
+            width: $item-width;
+            // &:not(:first-of-type) {
+            //     // display: none;
+            // }
+        }
+    }
+    .cricketVisionMob {
+        grid-area: 2/7/10/11;
+    }
+    .uHealthMob {
+        grid-area: 8/2/16/6;
+
+    }
+    .volunteerSafeMob {
+        grid-area: 5/5/13/9;
+
+    }
+}
