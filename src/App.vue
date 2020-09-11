@@ -1,11 +1,16 @@
 <template>
-  <div id="app" @scroll="handleScroll">
+  <div id="app">
     <Nav/>
-    <LeftSide :image="{
-      src: '',
-      alt: 'A showcase image'
-    }" />
-    <RightSide />
+    <LeftSide 
+      :image="{
+        src: '',
+        alt: 'A showcase image'
+      }"
+      :currentPage="currentPage"
+    />
+    <RightSide 
+      :currentPage="currentPage"
+    />
   </div>
 </template>
 
@@ -20,6 +25,24 @@ export default {
     Nav,
     LeftSide,
     RightSide
+  },
+  created() {
+    window.onscroll = function() {
+      console.log('scroll position: ', window.scrollY);
+      let pageHeight = window.innerHeight;
+      let currentScroll = window.scrollY;
+      let currentPage = Math.floor(currentScroll / pageHeight);
+      let prevPage = 0;
+      if (currentPage !== prevPage) {
+        console.log('page is now: ', currentPage);
+        this.currentPage = currentPage;
+      }
+    }
+  },
+  computed: function() {
+    return {
+      currentPage: 0
+    }
   }
 }
 
@@ -50,12 +73,14 @@ body {
         position: fixed;
     }
     .right-side {
-        min-height: 100vh;
-        width: 50vw;
-        background-color: #fff6ec;
-        // background-color: #222222;
-        position: relative;
-        left: 50vw;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      width: 50vw;
+      background-color: #fff6ec;
+      // background-color: #222222;
+      position: relative;
+      left: 50vw;
     }
 }
 </style>

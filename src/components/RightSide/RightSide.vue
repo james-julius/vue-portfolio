@@ -1,17 +1,34 @@
 <template>
     <div ref="background" class="right-side">
         <Homepage 
-            v-if="!showCaseStudies"
             :heading="`James Julius Darby`" 
             :subHeading="`Web developer based in Los Angeles, CA`"
             :content="`Web developer based in Los Angeles, CA`"
         />
         <CaseStudy 
-            v-else
-            heading="activeCaseStudy.heading"
+            v-for="caseStudy in caseStudies"
+            :key="caseStudy"
+            :heading="caseStudy.heading"
+            :subHeading="caseStudy.subHeading"
+            :content="caseStudy.content"
+            :stack="caseStudy.stack"
+        />
+        <!-- <CaseStudy 
+            :heading="activeCaseStudy.heading"
+            :subHeading="activeCaseStudy.subHeading"
             :content="activeCaseStudy.content"
             :stack="activeCaseStudy.stack"
         />
+        <CaseStudy 
+            :heading="activeCaseStudy.heading"
+            :subHeading="activeCaseStudy.subHeading"
+            :content="activeCaseStudy.content"
+            :stack="activeCaseStudy.stack"
+        /> -->
+        
+            <!-- <span style="display: fixed; height: 100px; width: 100px; top: 50px; right: 50px;">
+                <button @click="nextSlide()">Next Slide</button>
+            </span> -->
     </div>
 </template>
 
@@ -24,24 +41,27 @@ export default {
         Homepage,
         CaseStudy
     },
+    props: {
+        currentPage: Number
+    },
     mounted() {
     },
     methods: {
-        handleScroll() {
-            console.log('handleScroll Called')
-            console.log(window.scrollY);
-            this.lastKnownScrollPosition = window.scrollY;
+        // handleScroll() {
+        //     console.log('handleScroll Called')
+        //     console.log(window.scrollY);
+        //     this.lastKnownScrollPosition = window.scrollY;
 
-            if (!this.currentlyScrolling) {
-                console.log('not currently scrolling');
-                window.requestAnimationFrame(function() {
-                    console.log('reqAnimation frame running')
-                    this.currentlyScrolling = false;
-                });
+        //     if (!this.currentlyScrolling) {
+        //         console.log('not currently scrolling');
+        //         window.requestAnimationFrame(function() {
+        //             console.log('reqAnimation frame running')
+        //             this.currentlyScrolling = false;
+        //         });
 
-                this.currentlyScrolling = true;
-            }
-        },
+        //         this.currentlyScrolling = true;
+        //     }
+        // },
         nextPage() {
             if (this.showCaseStudies) {
                 if (this.currentCaseStudy < this.caseStudies.length -1) {
@@ -70,21 +90,22 @@ export default {
             caseStudies: [
                 {
                     heading: "Unique Health",
+                    subHeading: 'A nutrition quiz website and app',
                     content: "Unique Health is a approached me with a view to re-designing their website, and infrastructure to allow for paywalling.",
                     stack: ['laravel', 'wordpress', 'woocommerce', 'mysql'],
                     bgColor: '#f74040'
                 },
                 {
                     heading: "CricketVision",
-                    content: "CricketVision is a coaching company based in Hertfordshire, UK. I designed and developed the front-end for a booking app with x3 user groups: Clubs, Coaches and Customers.",
+                    subHeading: 'A coaching company based in Hertfordshire, UK.',
+                    content: "I designed and developed the front-end for a booking app with x3 user groups: Clubs, Coaches and Customers.",
                     stack: ['html', 'css', 'react', 'strapi'],
                     bgColor: 'rgb(39, 169, 79)'
                 },
                 {
                     heading: "VolunteerSafe",
-                    content: `Created to help during COVID-19, VolunteerSafe is an Identity Verification platform for grassroots volunteering organisations.
-                            I designed and developed the front-end in Adobe XD, and co-ordinated a team of x5 developers in creating the front-end. 
-                            `,
+                    subHeading: 'Created in COVID-19, VolunteerSafe is an Identity Verification platform for grassroots volunteering organisations.',
+                    content: `I designed and developed the front-end in Adobe XD, and co-ordinated a team of x5 developers in creating the front-end.`,
                     stack: ['html', 'css', 'react'],
                     bgColor: '#6074c4'
                 },

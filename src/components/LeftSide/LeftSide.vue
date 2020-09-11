@@ -9,7 +9,8 @@ import Carousel from './Carousel';
 export default {
     name: 'LeftSide', 
     props: {
-        image: Object
+        image: Object,
+        currentPage: Number
     },
     components: {
         Carousel

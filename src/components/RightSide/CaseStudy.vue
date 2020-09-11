@@ -2,12 +2,13 @@
     <div class="rightPage">
         <div class="headline">
             <h1>{{heading}}</h1>
+            <h4>{{subHeading}}</h4>
         </div>
         <div class="content">
             <p>{{content}}</p>
         </div>
         <Technologies
-            :stack="props.stack"
+            :stack="stack"
         />
     </div>
 </template>
@@ -16,7 +17,7 @@
 import Technologies from './Technologies';
 
 export default {
-    name: 'Homepage',
+    name: 'CaseStudy',
     components: {
         Technologies
     },
@@ -25,18 +26,13 @@ export default {
         subHeading: String,
         content: String,
         stack: Array
-    },
-    methods: {
-        nextPage() {
-
-        }
     }
 }
 </script>
 
 <style lang="scss" scoped>
 .rightPage {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     display: grid;
     grid-template: repeat(16, 1fr) / repeat(12, 1fr);
