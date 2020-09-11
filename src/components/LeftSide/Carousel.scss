@@ -10,7 +10,7 @@ $theta: 2 * $PI / $n;
 $item-spacing: 50px;
 // Z-Index
 $viewer-distance: 800px;
-$iPhone11Ratio: 2.11;
+$iPhone11Ratio: 1.9;
 $item-width: 22vw;
 $item-height: $item-width * $iPhone11Ratio;
 $apothem: $item-width / (2 * (math.tan($PI / $n)));
@@ -35,13 +35,15 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
         transform-origin: 50% 50% (-$apothem);
         
         .img-container {
-            height: 75vh;
+            height: $item-height;
             width: $item-width;
             box-sizing: border-box;
-            padding: 0 $item-spacing / 2;
             background-repeat: no-repeat;
             background-size: contain;
             z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             &:not(:first-of-type) {
                 position: absolute;
                 left: 0;
@@ -54,16 +56,31 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
                     transform: rotateY(#{($i - 1) * $theta}rad);
                 }
             }
+            iframe {
+                display: none;
+            }
+            // The active class decides if we're using an iframe, or a still image
+            &.active {
+                img {
+                    display: none;
+                }
+                iframe {
+                    display: block;
+                    background-color: teal;
+                    z-index: 4;
+                }
+            }
             
             img, iframe {
                 position: relative;
-                top: 2.5%;
-                right: 2%;
-                height: 105%;
-                width: 105%;
+                top: 1%;
+                // right: 2%;
+                height: 97%;
+                width: 97%;
                 z-index: 1;
-                border-radius: 35px;
+                border-radius: 30px;
             }
+            // iPhone layers sandwich the image or iframe to make it look authentic
             &:before {
                 content: $iphone-back;
                 position: absolute;
@@ -80,7 +97,7 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
                 width: $item-width;
                 top: 0;
                 left: 0;
-                z-index: 2;
+                z-index: 5;
                 pointer-events: none;
             }
         }

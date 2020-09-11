@@ -2,24 +2,29 @@
     <div class="carousel">
     <button @click="setIndex(currentIndex)">Rotate</button>
         <figure ref="figure" :index="1">
-            <div class="img-container">
+            <div ref="1" class="img-container active">
                 <img class="cricketVisionMob show-front" src="../../assets/cricketVisionMobile.png"/>
+                <iframe src="https://app.cricketvision.co.uk"/>
             </div>
-            <div class="img-container">
-                <!-- <img class="uHealthMob" src="../../assets/uHealthMobile.png"/> -->
+            <div ref="2" class="img-container">
+                <img class="uHealthMob" src="../../assets/uHealthMobile.png"/>
                 <iframe src="https://www.u-niquehealth.co.uk"/>
             </div>
-            <div class="img-container">
+            <div ref="3" class="img-container">
                 <img class="volunteerSafeMob" src="../../assets/volunteerSafeMobile.png"/>
+                <iframe src="https://www.volunteersafe.com"/>
             </div>
-            <div class="img-container">
+            <div ref="4" class="img-container">
                 <img class="cricketVisionMob" src="../../assets/cricketVisionMobile.png"/>
+                <iframe src="https://app.cricketvision.co.uk"/>
             </div>
-            <div class="img-container">
+            <div ref="5" class="img-container">
                 <img class="uHealthMob" src="../../assets/uHealthMobile.png"/>
+                <iframe src="https://www.u-niquehealth.co.uk"/>
             </div>
-            <div class="img-container">
+            <div ref="6" class="img-container">
                 <img class="volunteerSafeMob" src="../../assets/volunteerSafeMobile.png"/>
+                <iframe src="https://www.volunteersafe.com"/>
             </div>
         </figure>
     </div>

@@ -46,11 +46,13 @@ body {
         height: 100vh;
         width: 50vw;
         background-color: crimson;
+        background-color: rgb(216, 35, 71);
     }
     .right-side {
         height: 100vh;
         width: 50vw;
         background-color: #fff6ec;
+        background-color: #222222;
     }
 }
 </style>
