@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" @scroll="handleScroll">
     <Nav/>
     <LeftSide :image="{
       src: '',
@@ -11,8 +11,8 @@
 
 <script>
 import Nav from './components/Nav/Nav';
-import LeftSide from './components/LeftSide/LeftWrapper';
-import RightSide from './components/RightSide/RightWrapper';
+import LeftSide from './components/LeftSide/LeftSide';
+import RightSide from './components/RightSide/RightSide';
 
 export default {
   name: 'App',
@@ -37,7 +37,7 @@ body {
   color: #2c3e50;
   margin-top: 60px;
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   margin: 0px;
   padding: 0px;
@@ -47,12 +47,15 @@ body {
         width: 50vw;
         background-color: crimson;
         background-color: rgb(216, 35, 71);
+        position: fixed;
     }
     .right-side {
-        height: 100vh;
+        min-height: 100vh;
         width: 50vw;
         background-color: #fff6ec;
-        background-color: #222222;
+        // background-color: #222222;
+        position: relative;
+        left: 50vw;
     }
 }
 </style>

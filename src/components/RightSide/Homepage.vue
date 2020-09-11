@@ -8,10 +8,10 @@
         </div>
 
         <div class="arrow">
-            <p>Discover<br/>My</p>
+            <p>Discover<br/>My Portfolio</p>
             <span class="arrow-container">
-                <p class="upright-p">Portfolio</p>
                 <img :click="nextPage" src="../../assets/ctarrow.svg" />
+                <p class="upright-p">SCROLL</p>
             </span>
         </div>
         <div class="link-list">
@@ -44,7 +44,7 @@ export default {
 
 <style lang="scss">
 .pageOne {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     display: grid;
     grid-template: repeat(16, 1fr) / repeat(12, 1fr);
@@ -71,7 +71,7 @@ export default {
         justify-content: flex-end;
         padding-bottom: 1vh;
         align-items: flex-start;
-        grid-area: 11/1/17/2;
+        grid-area: 11/1/17/4;
         // background-color: lightcyan;
         padding-left: 1vw;
         // border-bottom: 1px solid aquamarine;
@@ -93,7 +93,8 @@ export default {
             p {
                 text-align: left;
                 position: relative;
-                right: 6px;
+                right: 43px;
+                top: 5px;
             }
             img {
                 width: 50%;

@@ -1,5 +1,5 @@
 <template>
-    <div class="pageOne">
+    <div class="rightPage">
         <div class="headline">
             <h1>{{heading}}</h1>
         </div>
@@ -7,7 +7,7 @@
             <p>{{content}}</p>
         </div>
         <Technologies
-            :stack="['laravel', 'wordpress', 'woocommerce', 'mysql']"
+            :stack="props.stack"
         />
     </div>
 </template>
@@ -16,14 +16,15 @@
 import Technologies from './Technologies';
 
 export default {
-    name: 'PageOne',
+    name: 'Homepage',
     components: {
         Technologies
     },
     props: {
         heading: String,
         subHeading: String,
-        content: String
+        content: String,
+        stack: Array
     },
     methods: {
         nextPage() {
@@ -34,7 +35,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pageOne {
+.rightPage {
     height: 100%;
     width: 100%;
     display: grid;
@@ -97,9 +98,9 @@ export default {
         }
     }
 
-    .technologies {
+    // .technologies {
 
-    }
+    // }
 
     .sideline {
         grid-area: 1/12/17/13;

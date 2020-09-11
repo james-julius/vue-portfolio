@@ -1,6 +1,5 @@
 <template>
     <div class="left-side">
-        <!-- <iframe src="https://u-niquehealth.co.uk"/> -->
         <Carousel />
     </div>
 </template>
@@ -22,9 +21,9 @@ export default {
 .left-side {
     height: 100%;
     width: 100%;
+    max-height: 100vh;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-
 }
 </style>
