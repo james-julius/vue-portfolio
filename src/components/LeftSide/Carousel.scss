@@ -37,7 +37,6 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
         .img-container {
             height: $item-height;
             width: $item-width;
-            box-sizing: border-box;
             background-repeat: no-repeat;
             background-size: contain;
             z-index: 2;
@@ -76,7 +75,7 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
                 top: 1%;
                 // right: 2%;
                 height: 97%;
-                width: 97%;
+                width: 95%;
                 z-index: 1;
                 border-radius: 30px;
             }

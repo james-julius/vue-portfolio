@@ -2,6 +2,9 @@
     <div class="carousel">
     <input type="number" v-model="desiredIndex" min="1" max="6"/>
     <button @click="goToIndex(desiredIndex)">Rotate</button>
+    <h5>{{currentIndex}}</h5>
+    <button @click="incrementIndex()">+</button>
+    <button @click="decrementIndex()">-</button>
         <figure ref="figure" :index="1">
             <div ref="rOne" class="img-container active">
                 <img class="cricketVisionMob show-front" src="../../assets/cricketVisionMobile.png"/>
@@ -39,19 +42,28 @@ export default {
     data: function() {
         return {
             currentIndex: 0,
-            desiredIndex: 1
+            desiredIndex: 1,
+            rotationDegree: 0
         }
     },
     methods: {
         incrementIndex: function () {
             const theta = 2 * 3.141592653589793 / carouselSides;
-            this.$refs.figure.style.transform = `rotateY(-${theta}rad)`;
+            this.$refs.figure.style.transform = `rotateY(${this.rotationDegree + theta}rad)`;
+            this.rotationDegree+= theta;
             this.currentIndex ++;
+        },
+        decrementIndex: function () {
+            const theta = 2 * 3.141592653589793 / carouselSides;
+            this.$refs.figure.style.transform = `rotateY(${this.rotationDegree - theta}rad)`;
+            this.rotationDegree-= theta;
+            this.currentIndex --;
         },
         goToIndex: function () {
             const theta = 2 * 3.141592653589793 / carouselSides;
-            console.log('Will move forward ', this.desiredIndex, 'sides')
+            console.log('Will move forward ', this.desiredIndex, 'sides');
             this.$refs.figure.style.transform = `rotateY(${this.desiredIndex * theta}rad)`;
+            this.rotationDegree+= this.desiredIndex * theta;
         }
     }
 }
