@@ -1,6 +1,6 @@
 <template>
     <div class="left-side">
-        <Carousel />
+        <Carousel :carouselIndex="currentPage - 1"/>
     </div>
 </template>
 

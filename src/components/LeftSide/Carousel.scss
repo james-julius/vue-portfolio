@@ -3,7 +3,7 @@
 
 // Carousel configuration
 // Number of images
-$n: 6;
+$n: 5;
 $PI: 3.141592653589793;
 $theta: 2 * $PI / $n;
 // Spacing between the images. This is halved as it will be used on the left and right of each image
@@ -11,7 +11,7 @@ $item-spacing: 50px;
 // Z-Index
 $viewer-distance: 800px;
 $iPhone11Ratio: 1.9;
-$item-width: 20vw;
+$item-width: 25vw;
 $item-height: $item-width * $iPhone11Ratio;
 $apothem: $item-width / (2 * (math.tan($PI / $n)));
 .carousel {
@@ -43,6 +43,7 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
             &:not(:first-of-type) {
                 position: absolute;
                 left: 0;
@@ -52,13 +53,22 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
             }
             @for $i from 2 through $n {
                 &:nth-child(#{$i}) {
-                    transform: rotateY(#{($i - 1) * $theta}rad);
+                    transform: rotateY(-#{($i - 1) * $theta}rad);
                 }
             }
             iframe {
                 display: none;
             }
             // The active class decides if we're using an iframe, or a still image
+            img, iframe {
+                position: relative;
+                top: 0.6%;
+                // right: 2%;
+                height: 95.5%;
+                width: 90%;
+                z-index: 1;
+                border-radius: 30px;
+            }
             &.active {
                 img {
                     display: none;
@@ -69,15 +79,30 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
                     z-index: 4;
                 }
             }
-            
-            img, iframe {
-                position: relative;
-                top: 0.6%;
-                // right: 2%;
-                height: 95.5%;
-                width: 90%;
-                z-index: 1;
-                border-radius: 30px;
+            .scrim, .visitSiteButton {
+                display: none;
+            }
+            &:not(.active) {
+                &:hover {
+                .scrim {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    pointer-events: none;
+                    background-color: #333;
+                    opacity: 0.1;
+                }
+                .visitSiteButton {
+                    display: block;
+                    position: absolute;
+                    height: 30%;
+                    width: auto;
+                    top: 35%;
+                    }
+                }
             }
             // iPhone layers sandwich the image or iframe to make it look authentic
             &:before {

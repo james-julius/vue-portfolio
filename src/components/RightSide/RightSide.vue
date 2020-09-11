@@ -13,22 +13,6 @@
             :content="caseStudy.content"
             :stack="caseStudy.stack"
         />
-        <!-- <CaseStudy 
-            :heading="activeCaseStudy.heading"
-            :subHeading="activeCaseStudy.subHeading"
-            :content="activeCaseStudy.content"
-            :stack="activeCaseStudy.stack"
-        />
-        <CaseStudy 
-            :heading="activeCaseStudy.heading"
-            :subHeading="activeCaseStudy.subHeading"
-            :content="activeCaseStudy.content"
-            :stack="activeCaseStudy.stack"
-        /> -->
-        
-            <!-- <span style="display: fixed; height: 100px; width: 100px; top: 50px; right: 50px;">
-                <button @click="nextSlide()">Next Slide</button>
-            </span> -->
     </div>
 </template>
 

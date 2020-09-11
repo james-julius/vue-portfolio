@@ -12,6 +12,7 @@
       :currentPage="currentPage"
     />
   </div>
+  
 </template>
 
 <script>
@@ -27,23 +28,27 @@ export default {
     RightSide
   },
   created() {
-    window.onscroll = function() {
-      console.log('scroll position: ', window.scrollY);
+    window.onscroll = this.handleScroll;
+  }, 
+  methods: {
+    handleScroll() {
       let pageHeight = window.innerHeight;
       let currentScroll = window.scrollY;
       let currentPage = Math.floor(currentScroll / pageHeight);
-      let prevPage = 0;
-      if (currentPage !== prevPage) {
+      if (currentPage !== this.prevPage) {
+        // console.log('prevPage: ', this.prevPage);
         console.log('page is now: ', currentPage);
+        this.prevPage = currentPage;
         this.currentPage = currentPage;
       }
     }
   },
-  computed: function() {
-    return {
-      currentPage: 0
+  data: function() {
+      return {
+        prevPage: 0,
+        currentPage: 0
+      }
     }
-  }
 }
 
 </script>
