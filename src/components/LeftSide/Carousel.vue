@@ -14,31 +14,31 @@
                 <img class="show-front" src="../../assets/uHealthMobile.png"/>
                 <iframe src="https://www.u-niquehealth.co.uk"/>
                 <div class="scrim"/>
-                <span class="visitSiteButton">Visit Site</span>
+                <span class="visitSiteButton">Activate Site</span>
             </div>
             <div ref="rTwo" class="img-container" @hover="handleHover(rTwo)">
                 <img class="show-front" src="../../assets/cricketVisionMobile.png"/>
                 <iframe src="https://app.cricketvision.co.uk"/>
                 <div class="scrim"/>
-                <span class="visitSiteButton">Visit Site</span>
+                <span class="visitSiteButton">Activate Site</span>
             </div>
             <div ref="rThree" class="img-container" @hover="handleHover(rThree)">
                 <img class="show-front" src="../../assets/vSafeMobile.png"/>
                 <iframe src="https://www.volunteersafe.com"/>
                 <div class="scrim"/>
-                <span class="visitSiteButton">Visit Site</span>
+                <span class="visitSiteButton">Activate Site</span>
             </div>
             <div ref="rFour" class="img-container" @hover="handleHover(rFour)">
                 <img class="show-front" src="../../assets/cultMiaMobile.png"/>
                 <iframe src="https://www.cultmia.com"/>
                 <div class="scrim"/>
-                <span class="visitSiteButton">Visit Site</span>
+                <span class="visitSiteButton">Activate Site</span>
             </div>
             <div ref="rFive" class="img-container" @hover="handleHover(rFive)">
                 <img class="show-front" src="../../assets/reliMobile.png"/>
                 <iframe src="https://reli.eco"/>
                 <div class="scrim"/>
-                <span class="visitSiteButton">Visit Site</span>
+                <span class="visitSiteButton">Activate Site</span>
             </div>
         </figure>
     </div>

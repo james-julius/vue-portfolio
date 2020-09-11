@@ -9,7 +9,7 @@ $theta: 2 * $PI / $n;
 // Spacing between the images. This is halved as it will be used on the left and right of each image
 $item-spacing: 50px;
 // Z-Index
-$viewer-distance: 800px;
+$viewer-distance: 1500px;
 $iPhone11Ratio: 1.9;
 $item-width: 25vw;
 $item-height: $item-width * $iPhone11Ratio;
@@ -31,7 +31,7 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
         // width: $item-width;
         margin-bottom: auto;
         transform-style: preserve-3d;
-        transition: transform 5s;
+        transition: transform 3s ease-in-out;
         transform-origin: 50% 50% (-$apothem);
         
         .img-container {
@@ -93,14 +93,26 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
                     width: 100%;
                     pointer-events: none;
                     background-color: #333;
-                    opacity: 0.1;
+                    opacity: 0.2;
+                    z-index: 5;
+                    border-radius: 15%;
                 }
                 .visitSiteButton {
-                    display: block;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: bold;
                     position: absolute;
-                    height: 30%;
-                    width: auto;
-                    top: 35%;
+                    height: 7%;
+                    width: 50%;
+                    top: 45%;
+                    z-index: 6;
+                    background-color: whitesmoke;
+                    border-radius: 15px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: rgb(236, 236, 236);
+                    }
                     }
                 }
             }
@@ -121,7 +133,7 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
                 width: $item-width;
                 top: 0;
                 left: 0;
-                z-index: 5;
+                z-index: 10;
                 pointer-events: none;
             }
         }
