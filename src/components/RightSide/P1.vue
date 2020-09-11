@@ -57,7 +57,7 @@ export default {
         text-align: left;
     }
     .headline {
-        grid-area: 5/1/6/8;
+        grid-area: 5/1/6/13;
     }
     .sub-heading {
         display: flex;

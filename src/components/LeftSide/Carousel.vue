@@ -1,28 +1,29 @@
 <template>
     <div class="carousel">
-    <button @click="setIndex(currentIndex)">Rotate</button>
+    <input type="number" v-model="desiredIndex" min="1" max="6"/>
+    <button @click="goToIndex(desiredIndex)">Rotate</button>
         <figure ref="figure" :index="1">
-            <div ref="1" class="img-container active">
+            <div ref="rOne" class="img-container active">
                 <img class="cricketVisionMob show-front" src="../../assets/cricketVisionMobile.png"/>
                 <iframe src="https://app.cricketvision.co.uk"/>
             </div>
-            <div ref="2" class="img-container">
+            <div ref="rTwo" class="img-container">
                 <img class="uHealthMob" src="../../assets/uHealthMobile.png"/>
                 <iframe src="https://www.u-niquehealth.co.uk"/>
             </div>
-            <div ref="3" class="img-container">
+            <div ref="rThree" class="img-container">
                 <img class="volunteerSafeMob" src="../../assets/volunteerSafeMobile.png"/>
                 <iframe src="https://www.volunteersafe.com"/>
             </div>
-            <div ref="4" class="img-container">
+            <div ref="rFour" class="img-container">
                 <img class="cricketVisionMob" src="../../assets/cricketVisionMobile.png"/>
                 <iframe src="https://app.cricketvision.co.uk"/>
             </div>
-            <div ref="5" class="img-container">
+            <div ref="rFive" class="img-container">
                 <img class="uHealthMob" src="../../assets/uHealthMobile.png"/>
                 <iframe src="https://www.u-niquehealth.co.uk"/>
             </div>
-            <div ref="6" class="img-container">
+            <div ref="rSix" class="img-container">
                 <img class="volunteerSafeMob" src="../../assets/volunteerSafeMobile.png"/>
                 <iframe src="https://www.volunteersafe.com"/>
             </div>
@@ -32,18 +33,25 @@
 
 <script>
 import './Carousel.scss';
+const carouselSides = 6;
 export default {
     name: 'Carousel',
     data: function() {
         return {
-            currentIndex: 0
+            currentIndex: 0,
+            desiredIndex: 1
         }
     },
     methods: {
-        setIndex: function (index) {
-            const theta = 2 * 3.141592653589793 / 6;
-            this.$refs.figure.style.transform = `rotateY(${index * theta}rad)`;
+        incrementIndex: function () {
+            const theta = 2 * 3.141592653589793 / carouselSides;
+            this.$refs.figure.style.transform = `rotateY(-${theta}rad)`;
             this.currentIndex ++;
+        },
+        goToIndex: function () {
+            const theta = 2 * 3.141592653589793 / carouselSides;
+            console.log('Will move forward ', this.desiredIndex, 'sides')
+            this.$refs.figure.style.transform = `rotateY(${this.desiredIndex * theta}rad)`;
         }
     }
 }
