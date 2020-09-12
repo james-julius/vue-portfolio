@@ -10,46 +10,30 @@
     <h5 style="font-weight: bold; color: white;">Prop Index: {{carouselIndex}}</h5> -->
     
         <figure ref="figure" :index="1">
-            <div ref="rOne" class="img-container" @hover="handleHover(rOne)">
-                <img class="show-front" src="../../assets/uHealthMobile.png"/>
-                <iframe src="https://www.u-niquehealth.co.uk"/>
-                <div class="scrim"/>
-                <span class="visitSiteButton">Activate Site</span>
-            </div>
-            <div ref="rTwo" class="img-container" @hover="handleHover(rTwo)">
-                <img class="show-front" src="../../assets/cricketVisionMobile.png"/>
-                <iframe src="https://app.cricketvision.co.uk"/>
-                <div class="scrim"/>
-                <span class="visitSiteButton">Activate Site</span>
-            </div>
-            <div ref="rThree" class="img-container" @hover="handleHover(rThree)">
-                <img class="show-front" src="../../assets/vSafeMobile.png"/>
-                <iframe src="https://www.volunteersafe.com"/>
-                <div class="scrim"/>
-                <span class="visitSiteButton">Activate Site</span>
-            </div>
-            <div ref="rFour" class="img-container" @hover="handleHover(rFour)">
-                <img class="show-front" src="../../assets/cultMiaMobile.png"/>
-                <iframe src="https://www.cultmia.com"/>
-                <div class="scrim"/>
-                <span class="visitSiteButton">Activate Site</span>
-            </div>
-            <div ref="rFive" class="img-container" @hover="handleHover(rFive)">
-                <img class="show-front" src="../../assets/reliMobile.png"/>
-                <iframe src="https://reli.eco"/>
-                <div class="scrim"/>
-                <span class="visitSiteButton">Activate Site</span>
-            </div>
+            <CarouselItem
+                v-for="(item, index) in carouselItems"
+                :key="index"
+                :refProp="`carousel-item-${index}`"
+                :imageSrc="item.imageSrc"
+                :setActiveIndex="setActiveIndex"
+                :iframeSrc="item.iframeSrc"
+                :carouselClassList="item.carouselClassList"
+            />
         </figure>
     </div>
 </template>
 
 <script>
 import './Carousel.scss';
+import CarouselItem from './CarouselItem';
+import { globalState } from '../../Global';
 export default {
     name: 'Carousel',
     props: {
         carouselIndex: Number
+    },
+    components: {
+        CarouselItem
     },
     watch: {
         carouselIndex: function(newVal) {
@@ -67,7 +51,8 @@ export default {
             carouselSides: 5,
             currentIndex: 0,
             desiredIndex: 1,
-            rotationDegree: 0
+            rotationDegree: 0,
+            carouselItems: globalState.caseStudies
         }
     },
     methods: {
@@ -83,12 +68,18 @@ export default {
             this.rotationDegree-= theta;
             this.currentIndex --;
         },
+        // setActiveIndex: function (ref) {
+        //     console.log('setting active index at ref: ', ref);
+        //     console.log(this.$refs);
+        //     this.$refs[ref].classlist = 'img-container active';
+        // },
         goToIndex: function (index) {
             const theta = 2 * 3.141592653589793 / this.carouselSides;
             console.log('Moving to index #', index);
             this.$refs.figure.style.transform = `rotateY(${index * theta}rad)`;
             this.currentIndex = index;
             this.rotationDegree+= index * theta;
+            
         }
     }
 }

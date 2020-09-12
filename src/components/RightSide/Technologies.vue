@@ -22,14 +22,14 @@ export default {
     name: 'Technologies',
     methods: {
         using(technology) {
-            console.log('using called with technology: ', technology)
+            console.log('using called with technology: ', technology);
             console.log(this.stack);
             if (this.stack.includes(technology)) {
                 console.log('test result: , ', true) 
                 return true;
             }
             else {
-                return false
+                return false;
             }
         }
     },

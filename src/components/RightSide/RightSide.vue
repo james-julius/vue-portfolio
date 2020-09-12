@@ -19,6 +19,8 @@
 <script>
 import Homepage from './Homepage';
 import CaseStudy from './CaseStudy';
+import { globalState } from '../../Global';
+
 export default {
     name: 'RightSide',
     components: {
@@ -71,41 +73,7 @@ export default {
             lastKnownScrollPosition: 0,
             showCaseStudies: false,
             currentCaseStudy: 0,
-            caseStudies: [
-                {
-                    heading: "Unique Health",
-                    subHeading: 'A nutrition quiz website and app',
-                    content: "Unique Health is a approached me with a view to re-designing their website, and infrastructure to allow for paywalling.",
-                    stack: ['laravel', 'wordpress', 'woocommerce', 'mysql'],
-                    bgColor: '#f74040'
-                },
-                {
-                    heading: "CricketVision",
-                    subHeading: 'A coaching company based in Hertfordshire, UK.',
-                    content: "I designed and developed the front-end for a booking app with x3 user groups: Clubs, Coaches and Customers.",
-                    stack: ['html', 'css', 'react', 'strapi'],
-                    bgColor: 'rgb(39, 169, 79)'
-                },
-                {
-                    heading: "VolunteerSafe",
-                    subHeading: 'Created in COVID-19, VolunteerSafe is an Identity Verification platform for grassroots volunteering organisations.',
-                    content: `I designed and developed the front-end in Adobe XD, and co-ordinated a team of x5 developers in creating the front-end.`,
-                    stack: ['html', 'css', 'react'],
-                    bgColor: '#6074c4'
-                },
-                {
-                    heading: "Cult Mia",
-                    content: "",
-                    stack: ['shopify'],
-                    bgColor: '#fff'
-                },
-                {
-                    heading: "Reli",
-                    content: "",
-                    stack: ['squarespace'],
-                    bgColor: '#303030'
-                }
-            ]
+            caseStudies: globalState.caseStudies
         }
     }
 }

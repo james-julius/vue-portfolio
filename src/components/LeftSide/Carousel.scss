@@ -33,7 +33,10 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
         transform-style: preserve-3d;
         transition: transform 3s ease-in-out;
         transform-origin: 50% 50% (-$apothem);
-        
+        div {
+            height: $item-height;
+            width: $item-width;
+        }
         .img-container {
             height: $item-height;
             width: $item-width;
