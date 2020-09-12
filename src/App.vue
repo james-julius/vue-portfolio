@@ -74,7 +74,7 @@ body {
         height: 100vh;
         width: 50vw;
         background-color: crimson;
-        background-color: rgb(216, 35, 71);
+        background-color: var(--leftSide-bgColor);
         position: fixed;
     }
     .right-side {

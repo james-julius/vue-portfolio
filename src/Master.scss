@@ -1,0 +1,63 @@
+html {
+    overflow-x: hidden;
+}
+body {
+margin: 0;
+}
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+
+
+    .left-side {
+        height: 100vh;
+        width: 50vw;
+        max-height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        // background-color: rgb(216, 35, 71);
+        background-color: var('--leftSide-bg-color');
+        transition: 3s fade ease-in-out;
+        &.switch {
+            background-color: var('--leftSide-bg-color');
+            transition: 3s fade ease-in-out;
+        }
+
+        .carousel {
+            // --bg-color: 'crimson';
+            transition: 3s fade ease-in-out;
+            background-color: var(--leftSide-bgColor);
+            max-height: 95vh;
+            .dev-controls {
+                display: inline-flex;
+                height: 30px;
+                justify-content: center;
+                button {
+                    min-width: 40px;
+                }
+                input {
+                    min-width: 50px;
+                }
+            }
+        }
+    }
+    .right-side {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        width: 50vw;
+        background-color: #fff6ec;
+        // background-color: #222222;
+        position: relative;
+        left: 50vw;
+        }
+}
