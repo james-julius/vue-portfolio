@@ -1,9 +1,9 @@
 <template>
     <div :ref="refProp" :class="`img-container ${carouselClassList}`" @hover="handleHover(ref)">
         <img :src="require(`@/assets/${imageSrc}`)"/>
-        <iframe :src="iframeSrc"/>
+        <iframe :src="loadedIFrameSrc"/>
         <div class="scrim"/>
-        <span class="visitSiteButton" @click="setActiveIndex(refProp)">Activate Site</span>
+        <span class="visitSiteButton" @click="setActiveIFrame(refProp)">Activate Site</span>
     </div>
 </template>
 
@@ -14,15 +14,30 @@ export default {
     props: [
         'refProp', 
         'imageSrc', 
-        'iframeSrc', 
-        // 'setActiveIndex',
-        'carouselClassList'
+        'iframeSrc',
+        'carouselClassList',
+        'previousIndex',
+        'currentIndex',
+        'itemIndex'
     ],
+    data: function() {
+            return {
+                loadedIFrameSrc: ''
+            }
+    },
+    watch: {
+        currentIndex: function() {
+            (this.itemIndex === this.currentIndex) ? 
+                this.carouselClassList = 'selected' : 
+                this.carouselClassList = '';
+        }
+    },
     methods: {
-        setActiveIndex: function (ref) {
-            console.log('setting active index at ref: ', ref);
-            console.log(this.$refs);
-            this.carouselClassList = 'img-container active';
+        setActiveIFrame: function (ref) {
+            console.log('activating iFrame at ref: ', ref);
+            // Here we only load the iframe src when the active class is present. Otherwise, all iframes will load upon page load.
+            this.loadedIFrameSrc = this.iframeSrc;
+            this.carouselClassList = 'selected active';
         },
     }
 }

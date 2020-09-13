@@ -13,9 +13,12 @@
             <CarouselItem
                 v-for="(item, index) in carouselItems"
                 :key="index"
+                :itemIndex="index"
                 :refProp="`carousel-item-${index}`"
                 :imageSrc="item.imageSrc"
                 :setActiveIndex="setActiveIndex"
+                :currentIndex="currentIndex"
+                :previousIndex="previousIndex"
                 :iframeSrc="item.iframeSrc"
                 :carouselClassList="item.carouselClassList"
             />
@@ -36,13 +39,15 @@ export default {
         CarouselItem
     },
     watch: {
-        carouselIndex: function(newVal) {
+        carouselIndex: function(newVal, oldVal) {
             // We watch the page number passed down, - 1 and change the carousel's index.
             // Check to make sure it's not max or min of the sides.
             if (newVal === this.carouselSides) return;
             if (newVal <= -1) return;
             else {
                 this.goToIndex(newVal);
+                this.currentIndex = newVal;
+                this.previousIndex = oldVal;
             }
         }
     },
@@ -50,6 +55,7 @@ export default {
         return {
             carouselSides: 5,
             currentIndex: 0,
+            previousIndex: null,
             desiredIndex: 1,
             rotationDegree: 0,
             carouselItems: globalState.caseStudies
