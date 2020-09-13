@@ -99,36 +99,36 @@ $apothem: 25vw / (2 * (math.tan($PI / $n))) * 1.05;
             }
             &:not(.active) {
                 &:hover {
-                .scrim {
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-                    width: 100%;
-                    pointer-events: none;
-                    background-color: #333;
-                    opacity: 0.2;
-                    z-index: 5;
-                    border-radius: 15%;
-                    transition: 2s ease-in-out;
-                }
-                .visitSiteButton {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-weight: bold;
-                    position: absolute;
-                    height: 7%;
-                    width: 50%;
-                    top: 45%;
-                    z-index: 6;
-                    background-color: whitesmoke;
-                    border-radius: 15px;
-                    cursor: pointer;
-                    &:hover {
-                        background-color: rgb(236, 236, 236);
+                    .scrim {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        pointer-events: none;
+                        background-color: #333;
+                        opacity: 0.2;
+                        z-index: 5;
+                        border-radius: 15%;
+                        transition: 2s ease-in-out;
                     }
+                    .visitSiteButton {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-weight: bold;
+                        position: absolute;
+                        height: 7%;
+                        width: 50%;
+                        top: 45%;
+                        z-index: 6;
+                        background-color: whitesmoke;
+                        border-radius: 15px;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: rgb(236, 236, 236);
+                        }
                     }
                 }
             }

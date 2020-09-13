@@ -28,6 +28,7 @@ export default {
         currentPage: function(newVal) {
             let bgColor = globalState.caseStudies[newVal  - 1].bgColor;
             gsap.to('.left-side', 2, {"--leftSide-bgColor": bgColor});
+            gsap.to('nav', 2, {"--nav-bgColor": bgColor});
         }
     },
     components: {

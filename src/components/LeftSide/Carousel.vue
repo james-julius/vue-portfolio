@@ -1,5 +1,5 @@
 <template>
-    <div class="carousel">
+    <div class="carousel" ref="carousel">
     <!-- <span class="dev-controls">
         <button @click="incrementIndex()">+</button>
         <button @click="decrementIndex()">-</button>

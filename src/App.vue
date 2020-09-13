@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Nav/>
+    <Nav :currentPage="currentPage"/>
     <LeftSide 
       :image="{
         src: '',
