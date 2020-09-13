@@ -17,11 +17,13 @@ export default {
 <style lang="scss">
 nav {
     display: inline-flex;
-    position: absolute;
+    position: fixed;
     right: 0px;
     width: 400px;
     top: 3vh;
     height: 5vh;
+    z-index: 9;
+    background-color: #fff6ec;
     // background-color: lemonchiffon;
     ul {
         display: flex;
