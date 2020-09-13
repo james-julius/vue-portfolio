@@ -1,7 +1,10 @@
 <template>
     <div :ref="refProp" :class="`img-container ${carouselClassList}`" @hover="handleHover(ref)">
         <img :src="require(`@/assets/${imageSrc}`)"/>
-        <iframe :src="loadedIFrameSrc"/>
+        <!-- <div class="iframe-container"> -->
+            <!-- <svg :src="require(`@/assets/brightLoader.svg`)" /> -->
+            <iframe :src="loadedIFrameSrc"/>
+        <!-- </div> -->
         <div class="scrim"/>
         <span class="visitSiteButton" @click="setActiveIFrame(refProp)">Activate Site</span>
     </div>

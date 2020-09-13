@@ -17,7 +17,7 @@ $item-spacing: 50px;
 // Z-Index
 $viewer-distance: 1500px;
 // $item-height: var(--item-width) * var(--iPhone11Ratio);
-$apothem: 25vw / (2 * (math.tan($PI / $n)));
+$apothem: 25vw / (2 * (math.tan($PI / $n))) * 1.05;
 
 @media (max-width: 750px) {
     :root {
@@ -136,7 +136,7 @@ $apothem: 25vw / (2 * (math.tan($PI / $n)));
             &:before {
                 content: $iphone-back;
                 position: absolute;
-                height: calc(var(--item-height) * .98);
+                height: calc(var(--item-height) * .9);
                 width: var(--item-width);
                 top: 3px;
                 left: 0;
