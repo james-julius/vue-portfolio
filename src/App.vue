@@ -82,6 +82,7 @@ body {
   margin: 0px;
   padding: 0px;
   --leftSide-bgColor: crimson;
+  --rightSide-bgColor: #fff6ec;
 
     .left-side {
         height: 100vh;
@@ -95,7 +96,7 @@ body {
       flex-direction: column;
       min-height: 100vh;
       width: 50vw;
-      background-color: #fff6ec;
+      background-color: var(--rightSide-bgColor);
       // background-color: #222222;
       position: relative;
       left: 50vw;
@@ -122,6 +123,11 @@ body {
           padding: 5px;
           figure {
             margin-top: 0px;
+            .img-container {
+              img {
+                border-radius: 5px;
+              }
+            }
           }
         }
       }

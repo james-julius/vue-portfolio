@@ -1,6 +1,5 @@
 <template>
     <div 
-        id="left-side-container"
         :class="`left-side ${classNames}`" 
         ref="leftSide"
         :style="leftSideStyle"
@@ -28,10 +27,7 @@ export default {
     watch: {
         currentPage: function(newVal) {
             let bgColor = globalState.caseStudies[newVal  - 1].bgColor;
-            gsap.to('#left-side-container', 2, {"--leftSide-bgColor": bgColor});
-            // this.leftSideStyle = {
-            //     '--leftSide-bgColor': bgColor
-            // }
+            gsap.to('.left-side', 2, {"--leftSide-bgColor": bgColor});
         }
     },
     components: {
