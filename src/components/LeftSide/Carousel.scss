@@ -66,10 +66,10 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
             img, iframe {
                 position: relative;
                 top: 0.6%;
-                // right: 2%;
+                left: 1%;
                 height: 95.5%;
-                width: 90%;
-                z-index: 1;
+                width: 93%;
+                z-index: 4;
                 border-radius: 30px;
             }
             &.active {
@@ -124,9 +124,9 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
             &:before {
                 content: $iphone-back;
                 position: absolute;
-                height: $item-height;
+                height: calc($item-height * .98);
                 width: $item-width;
-                top: 0;
+                top: 3px;
                 left: 0;
                 z-index: 0;
             }

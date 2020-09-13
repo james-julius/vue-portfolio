@@ -8,7 +8,7 @@
         </div>
 
         <div class="arrow">
-            <p>Discover<br/>My Portfolio</p>
+            <p>Scroll to Discover<br/>My Portfolio</p>
             <span class="arrow-container">
                 <img :click="nextPage" src="../../assets/ctarrow.svg" />
                 <p class="upright-p">SCROLL</p>
