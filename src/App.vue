@@ -28,12 +28,15 @@ export default {
     RightSide
   },
   created() {
-    window.onscroll = this.handleScroll;
-  }, 
+    // window.onscroll = this.handleScroll;
+    document.body.addEventListener('scroll', this.handleScroll)
+  },
   methods: {
     handleScroll() {
+      console.log('body scrolling');
+      const docBody = document.body;
       let pageHeight = window.innerHeight;
-      let currentScroll = window.scrollY;
+      let currentScroll = docBody.scrollTop;
       let currentPage = Math.floor(currentScroll / pageHeight);
       if (currentPage !== this.prevPage) {
         // console.log('prevPage: ', this.prevPage);
@@ -54,8 +57,17 @@ export default {
 </script>
 
 <style lang="scss">
+html {
+  overflow: hidden;
+}
 body {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
   margin: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -69,6 +81,7 @@ body {
   width: 100vw;
   margin: 0px;
   padding: 0px;
+  --leftSide-bgColor: crimson;
 
     .left-side {
         height: 100vh;
@@ -86,6 +99,38 @@ body {
       // background-color: #222222;
       position: relative;
       left: 50vw;
+    }
+    @media (max-width: 750px) {
+      flex-direction: column-reverse;
+      nav {
+        position: fixed;
+        top: 0vh;
+        width: 100vw;
+        &:after {
+          display: none;
+        }
+      }
+      .left-side {
+        height: 25vh;
+        width: 100vw;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        z-index: 5;
+        .carousel {
+          pointer-events: none;
+          padding: 5px;
+          figure {
+            margin-top: 0px;
+          }
+        }
+      }
+      .right-side {
+        width: 100vw;
+        top: 0vh;
+        left: 0vw;
+        margin-bottom: 25vh;
+      }
     }
 }
 </style>

@@ -79,7 +79,7 @@ $apothem: $item-width / (2 * (math.tan($PI / $n)));
                 iframe {
                     display: block;
                     background-color: teal;
-                    z-index: 4;
+                    // z-index: 4;
                 }
             }
             .scrim, .visitSiteButton {
