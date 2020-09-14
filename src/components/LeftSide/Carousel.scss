@@ -3,6 +3,8 @@
 
 // Number of images
 $n: 5;
+// Safari is a little bitch and won't handle the apothem properly. To resolve this, we need to manually calculate the --apothem property below so that the carousel
+// also works in Safari. We 
 $PI: 3.141592653589793;
 $theta: 2 * $PI / $n;
 // Spacing between the images. This is halved as it will be used on the left and right of each image
@@ -18,7 +20,7 @@ $apothem: 25vw / (2 * (math.tan($PI / $n))) * 1.05;
     --iPhone11Ratio: 1.9;
     --item-width: 25vw;
     --item-height: calc(25vw * 1.9);
-    --apothem: $apothem;
+    --apothem: calc(25vw / (2 * (0.726542528)) * 1.05);
 }
 
 @media (max-width: 750px) {
@@ -87,7 +89,7 @@ $apothem: 25vw / (2 * (math.tan($PI / $n))) * 1.05;
                 height: 95.5%;
                 width: 93%;
                 z-index: 4;
-                border-radius: 30px;
+                border-radius: 25px;
             }
             &.active {
                 img {

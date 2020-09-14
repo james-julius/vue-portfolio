@@ -9,7 +9,7 @@
     <!-- <h5 style="font-weight: bold; color: white;">Index: {{currentIndex}}</h5>
     <h5 style="font-weight: bold; color: white;">Prop Index: {{carouselIndex}}</h5> -->
     
-        <figure ref="figure" :index="1" :figureStyle="figureStyle">
+        <figure ref="figure" :index="1" :style="figureStyle">
             <CarouselItem
                 v-for="(item, index) in carouselItems"
                 :key="index"
@@ -38,30 +38,30 @@ export default {
     components: {
         CarouselItem
     },
-    // mounted() {
-    //     // We test the browser to see if it's safari, and apply different 3d rotation css
-    //     // This also needs to happen in the first carouselItem.
-    //     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    //     console.log('Carousel.vue safari test: ', isSafari)
-    //         console.log('THIS VVVVV')
-    //         console.log(this);    
-    //     if (isSafari) {
-    //         console.log('THIS VVVVV')
-    //         console.log(this);    
-    //     this.$refs.figure.style.transformOrigin = '0 0';
-    //     }
-    // },
+    mounted() {
+        // We test the browser to see if it's safari, and apply different 3d rotation css
+        // This also needs to happen in the first carouselItem.
+        console.log('Carousel.vue safari test: ', this.isSafari)
+        if (this.isSafari) {
+            // console.log('THIS VVVVV')
+            // console.log(this);    
+            console.log('will set transformOrigin to default')
+            this.$refs.figure.style.transformOrigin = '50% 50%';
+        }
+    },
     computed: {
             figureStyle() {
                 // We test the browser to see if it's safari, and apply different 3d rotation css
                 // This also needs to happen in the first carouselItem.
-                const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-                console.log('Carousel.vue safari test: ', isSafari)
-                if (isSafari) {
-                    return 'transform-origin: 0 0;';
+                console.log('Carousel.vue safari test: ', this.isSafari)
+                if (this.isSafari) {
+                    return 'transform-origin: 50% 50% 50%;';
                 } else {
                     return ''
                 }
+            },
+            isSafari() {
+                return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
             }
     },
     watch: {

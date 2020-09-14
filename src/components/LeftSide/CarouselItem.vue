@@ -1,6 +1,6 @@
 <template>
-    <div :ref="refProp" :class="`img-container ${carouselClassList}`" @hover="handleHover(ref)">
-        <img :src="require(`@/assets/${imageSrc}`)" :style="additionalStyle"/>
+    <div :ref="refProp" :style="additionalStyle" :class="`img-container ${carouselClassList}`" @hover="handleHover(ref)">
+        <img :src="require(`@/assets/${imageSrc}`)" />
         <!-- <div class="iframe-container"> -->
             <!-- <svg :src="require(`@/assets/brightLoader.svg`)" /> -->
             <iframe :src="loadedIFrameSrc"/>
