@@ -66,7 +66,7 @@ nav {
         padding:0px;
         background-color: var(--nav-bgColor);
         li {
-            flex: 1 1 auto;
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
