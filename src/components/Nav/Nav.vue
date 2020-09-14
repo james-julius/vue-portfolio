@@ -78,9 +78,9 @@ nav {
                 border-left: 2px solid white;   
             }
             &:hover {
-                background-image: linear-gradient(to top, white, var(--leftSide-bgColor));
-                opacity: 0.8;
-                transition: 2s ease-in-out;
+                background-image: linear-gradient(to bottom, var(--rightSide-bgColor), white);
+                color: darkslategray;
+                transition: .7s ease-in-out;
             }
         }
         &:after {
@@ -89,7 +89,7 @@ nav {
             height: 5px;
             position: absolute;
             bottom: -5px;
-            background-image: linear-gradient( to bottom,  var(--rightSide-bgColor), white);
+            background-image: linear-gradient( to top,  var(--rightSide-bgColor), white);
         }
         // &:before {
         //     content: "";

@@ -5,11 +5,13 @@
         :style="leftSideStyle"
         >
         <Carousel :carouselIndex="currentPage - 1"/>
+        <!-- <Particles/> -->
     </div>
 </template>
 
 <script>
 import Carousel from './Carousel';
+// import Particles from './Particles';
 import gsap from 'gsap';
 import { globalState } from '../../Global';
 export default {
@@ -32,7 +34,8 @@ export default {
         }
     },
     components: {
-        Carousel
+        Carousel,
+        // Particles
     }
 }
 </script>
