@@ -1,13 +1,6 @@
 @use "sass:math";
 @import './iPhoneSVGs.scss';
 
-// Carousel configuration
-// We set some variables as CSS variables because they need to be changed by media qureies
-:root {
-    --iPhone11Ratio: 1.9;
-    --item-width: 25vw;
-    --item-height: calc(25vw * 1.9);
-}
 // Number of images
 $n: 5;
 $PI: 3.141592653589793;
@@ -18,6 +11,15 @@ $item-spacing: 50px;
 $viewer-distance: 1500px;
 // $item-height: var(--item-width) * var(--iPhone11Ratio);
 $apothem: 25vw / (2 * (math.tan($PI / $n))) * 1.05;
+
+// Carousel configuration
+// We set some variables as CSS variables because they need to be changed by media queries
+:root {
+    --iPhone11Ratio: 1.9;
+    --item-width: 25vw;
+    --item-height: calc(25vw * 1.9);
+    --apothem: $apothem;
+}
 
 @media (max-width: 750px) {
     :root {
@@ -45,6 +47,9 @@ $apothem: 25vw / (2 * (math.tan($PI / $n))) * 1.05;
         transform-style: preserve-3d;
         transition: 2s ease;
         transform-origin: 50% 50% (-$apothem);
+        // NOTE: This does not work on safari. 
+        // To remedy that, we remove the transform origin property,
+        // and translateZ the first image in the Carousel.vue component.
         div {
             height: var(--item-height);
             width: var(--item-width);

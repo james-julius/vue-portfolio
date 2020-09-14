@@ -9,7 +9,7 @@
     <!-- <h5 style="font-weight: bold; color: white;">Index: {{currentIndex}}</h5>
     <h5 style="font-weight: bold; color: white;">Prop Index: {{carouselIndex}}</h5> -->
     
-        <figure ref="figure" :index="1">
+        <figure ref="figure" :index="1" :figureStyle="figureStyle">
             <CarouselItem
                 v-for="(item, index) in carouselItems"
                 :key="index"
@@ -37,6 +37,32 @@ export default {
     },
     components: {
         CarouselItem
+    },
+    // mounted() {
+    //     // We test the browser to see if it's safari, and apply different 3d rotation css
+    //     // This also needs to happen in the first carouselItem.
+    //     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    //     console.log('Carousel.vue safari test: ', isSafari)
+    //         console.log('THIS VVVVV')
+    //         console.log(this);    
+    //     if (isSafari) {
+    //         console.log('THIS VVVVV')
+    //         console.log(this);    
+    //     this.$refs.figure.style.transformOrigin = '0 0';
+    //     }
+    // },
+    computed: {
+            figureStyle() {
+                // We test the browser to see if it's safari, and apply different 3d rotation css
+                // This also needs to happen in the first carouselItem.
+                const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+                console.log('Carousel.vue safari test: ', isSafari)
+                if (isSafari) {
+                    return 'transform-origin: 0 0;';
+                } else {
+                    return ''
+                }
+            }
     },
     watch: {
         carouselIndex: function(newVal, oldVal) {
@@ -81,7 +107,7 @@ export default {
         // },
         goToIndex: function (index) {
             const theta = 2 * 3.141592653589793 / this.carouselSides;
-            console.log('Moving to index #', index);
+            // console.log('Moving to index #', index);
             this.$refs.figure.style.transform = `rotateY(${index * theta}rad)`;
             this.currentIndex = index;
             this.rotationDegree+= index * theta;

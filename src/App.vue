@@ -33,14 +33,14 @@ export default {
   },
   methods: {
     handleScroll() {
-      console.log('body scrolling');
+      // console.log('body scrolling');
       const docBody = document.body;
       let pageHeight = window.innerHeight;
       let currentScroll = docBody.scrollTop;
       let currentPage = Math.floor(currentScroll / pageHeight);
       if (currentPage !== this.prevPage) {
         // console.log('prevPage: ', this.prevPage);
-        console.log('page is now: ', currentPage);
+        // console.log('page is now: ', currentPage);
         this.prevPage = currentPage;
         this.currentPage = currentPage;
       }

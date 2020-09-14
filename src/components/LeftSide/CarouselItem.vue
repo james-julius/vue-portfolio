@@ -1,6 +1,6 @@
 <template>
     <div :ref="refProp" :class="`img-container ${carouselClassList}`" @hover="handleHover(ref)">
-        <img :src="require(`@/assets/${imageSrc}`)"/>
+        <img :src="require(`@/assets/${imageSrc}`)" :style="additionalStyle"/>
         <!-- <div class="iframe-container"> -->
             <!-- <svg :src="require(`@/assets/brightLoader.svg`)" /> -->
             <iframe :src="loadedIFrameSrc"/>
@@ -27,6 +27,17 @@ export default {
             return {
                 loadedIFrameSrc: ''
             }
+    },
+    computed: {
+        additionalStyle() {
+            const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            console.log('safari test result: ', isSafari);
+            if (isSafari && this.itemIndex === 0) {
+                return 'transform: translateZ(var(--apothem))';
+            } else {
+                return '';
+            }
+        }
     },
     watch: {
         currentIndex: function() {
