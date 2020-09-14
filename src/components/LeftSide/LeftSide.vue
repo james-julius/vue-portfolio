@@ -4,21 +4,27 @@
         ref="leftSide"
         :style="leftSideStyle"
         >
-        <Carousel :carouselIndex="currentPage - 1"/>
-        <!-- <Particles/> -->
+        <Carousel 
+            v-if="mode === 'carousel'" 
+            :carouselIndex="currentPage - 1"
+        />
+        <Particles 
+            v-if="mode === 'particles'"
+        />
     </div>
 </template>
 
 <script>
 import Carousel from './Carousel';
-// import Particles from './Particles';
+import Particles from './Particles';
 import gsap from 'gsap';
 import { globalState } from '../../Global';
 export default {
     name: 'LeftSide', 
     props: {
         image: Object,
-        currentPage: Number
+        currentPage: Number,
+        mode: String
     },
     data: function() {
         return {
@@ -35,7 +41,7 @@ export default {
     },
     components: {
         Carousel,
-        // Particles
+        Particles
     }
 }
 </script>

@@ -14,16 +14,7 @@
                 <p class="upright-p">SCROLL</p>
             </span>
         </div>
-        <!-- <div class="link-list">
-            <ul>
-                <li>About Me</li>
-                <li>Client Projects</li>
-                <li>Side Projects</li>
-                <li>Get a Quote</li>
-            </ul>
-        </div> -->
         <span class="sideline"/>
-        <!-- <button>Discover my portfolio</button> -->
     </div>
 </template>
 <script>

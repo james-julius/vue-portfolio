@@ -1,6 +1,10 @@
 import Vue from 'vue';
 const eventBus = new Vue();
 const globalState = {
+    setCurrentPage: function(input) {
+        this.currentPage = input;
+    },
+    currentPage: 0,
     caseStudies: [
         {
             heading: "Unique Health",

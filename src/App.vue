@@ -1,32 +1,13 @@
 <template>
   <div id="app">
-    <Nav :currentPage="currentPage"/>
-    <LeftSide 
-      :image="{
-        src: '',
-        alt: 'A showcase image'
-      }"
-      :currentPage="currentPage"
-    />
-    <RightSide 
-      :currentPage="currentPage"
-    />
+    <router-view :currentPage="currentPage"/>
   </div>
-  
 </template>
 
 <script>
-import Nav from './components/Nav/Nav';
-import LeftSide from './components/LeftSide/LeftSide';
-import RightSide from './components/RightSide/RightSide';
-
+import { globalState } from './Global';
 export default {
   name: 'App',
-  components: {
-    Nav,
-    LeftSide,
-    RightSide
-  },
   created() {
     // window.onscroll = this.handleScroll;
     document.body.addEventListener('scroll', this.handleScroll)
@@ -43,6 +24,7 @@ export default {
         // console.log('page is now: ', currentPage);
         this.prevPage = currentPage;
         this.currentPage = currentPage;
+        globalState.setCurrentPage(currentPage);
       }
     }
   },
@@ -88,6 +70,7 @@ body {
   margin: 0px;
   padding: 0px;
 
+  .page-container {
     .left-side {
         height: 100vh;
         width: 50vw;
@@ -142,5 +125,6 @@ body {
         margin-bottom: 25vh;
       }
     }
+  }
 }
 </style>

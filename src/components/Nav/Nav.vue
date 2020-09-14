@@ -2,9 +2,9 @@
     <nav :class="navClassList">
         <div class="nav-slider" @click="expandHideNav"/>
         <ul class="nav-list">
-            <li>Home</li>
-            <li>About Me</li>
-            <li>Get in touch</li>
+            <li @click="$router.push('/')">Home</li>
+            <li @click="$router.push('/about')">About Me</li>
+            <li @click="$router.push('/contact')">Get in touch</li>
         </ul>
     </nav>
 </template>
