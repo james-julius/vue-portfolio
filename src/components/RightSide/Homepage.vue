@@ -8,7 +8,7 @@
         </div>
 
         <div class="arrow">
-            <p>Scroll to Discover<br/>My Portfolio</p>
+            <p>View<br/>My Portfolio</p>
             <span class="arrow-container">
                 <img :click="nextPage" src="../../assets/ctarrow.svg" />
                 <p class="upright-p">SCROLL</p>
@@ -75,6 +75,7 @@ export default {
         // background-color: lightcyan;
         padding-left: 1vw;
         // border-bottom: 1px solid aquamarine;
+
         p {
             font-size: 1.2rem;
             font-weight: bold;
@@ -90,6 +91,13 @@ export default {
         }
         .arrow-container {
             display: flex;
+            animation: lightflash 3s infinite ease-in-out;
+
+            @keyframes lightflash {
+                0% { opacity: 1}
+                50% {  opacity: 0.6}
+                100% { opacity: 1}
+            }
             p {
                 text-align: left;
                 position: relative;

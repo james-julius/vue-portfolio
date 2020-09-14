@@ -97,7 +97,7 @@ $apothem: 25vw / (2 * (math.tan($PI / $n))) * 1.05;
                 }
                 iframe {
                     display: block;
-                    background-color: teal;
+                    background-color: var(--leftSide-bgColor);
                     // z-index: 4;
                 }
             }
