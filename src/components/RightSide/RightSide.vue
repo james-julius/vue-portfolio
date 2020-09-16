@@ -6,8 +6,8 @@
             :content="`Web developer based in Los Angeles, CA`"
         />
         <CaseStudy 
-            v-for="caseStudy in caseStudies"
-            :key="caseStudy"
+            v-for="(caseStudy, index) in caseStudies"
+            :key="index"
             :heading="caseStudy.heading"
             :subHeading="caseStudy.subHeading"
             :content="caseStudy.content"

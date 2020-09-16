@@ -1,5 +1,5 @@
 <template>
-    <div :ref="refProp" :style="additionalStyle" :class="`img-container ${carouselClassList}`" @hover="handleHover(ref)">
+    <div :ref="refProp" :style="additionalStyle" :class="`img-container ${carouselClasses}`" @hover="handleHover(ref)">
         <img :src="require(`@/assets/${imageSrc}`)" />
         <!-- <div class="iframe-container"> -->
             <!-- <svg :src="require(`@/assets/brightLoader.svg`)" /> -->
@@ -25,13 +25,13 @@ export default {
     ],
     data: function() {
             return {
-                loadedIFrameSrc: ''
+                loadedIFrameSrc: '',
+                carouselClasses: this.carouselClassList
             }
     },
     computed: {
         additionalStyle() {
-            const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-            console.log('safari test result: ', isSafari);
+            const isSafari = window.safari !== undefined;
             if (isSafari && this.itemIndex === 0) {
                 return 'transform: translateZ(var(--apothem))';
             } else {
@@ -42,16 +42,15 @@ export default {
     watch: {
         currentIndex: function() {
             (this.itemIndex === this.currentIndex) ? 
-                this.carouselClassList = 'selected' : 
-                this.carouselClassList = '';
+                this.carouselClasses = 'selected' : 
+                this.carouselClasses = '';
         }
     },
     methods: {
-        setActiveIFrame: function (ref) {
-            console.log('activating iFrame at ref: ', ref);
+        setActiveIFrame: function () {
             // Here we only load the iframe src when the active class is present. Otherwise, all iframes will load upon page load.
             this.loadedIFrameSrc = this.iframeSrc;
-            this.carouselClassList = 'selected active';
+            this.carouselClasses = 'selected active';
         },
     }
 }

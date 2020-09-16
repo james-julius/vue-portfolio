@@ -31,7 +31,8 @@ export default {
   },
   watch: {
       currentPage: function(newVal) {
-        console.log('current page changed')
+        if (newVal === 0) return;
+        // console.log('current page changed: ', newVal);
           let colorVars = globalState.caseStudies[newVal  - 1].colors;
           gsap.to('.left-side', 2, {"--leftSide-bgColor": colorVars.bgColor});
           gsap.to('nav', 2, {

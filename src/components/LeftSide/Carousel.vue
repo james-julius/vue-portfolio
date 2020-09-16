@@ -16,7 +16,6 @@
                 :itemIndex="index"
                 :refProp="`carousel-item-${index}`"
                 :imageSrc="item.imageSrc"
-                :setActiveIndex="setActiveIndex"
                 :currentIndex="currentIndex"
                 :previousIndex="previousIndex"
                 :iframeSrc="item.iframeSrc"
@@ -41,11 +40,8 @@ export default {
     mounted() {
         // We test the browser to see if it's safari, and apply different 3d rotation css
         // This also needs to happen in the first carouselItem.
-        console.log('Carousel.vue safari test: ', this.isSafari)
         if (this.isSafari) {
-            // console.log('THIS VVVVV')
-            // console.log(this);    
-            console.log('will set transformOrigin to default');
+            console.log('will edit transformOrigin')
             this.$refs.figure.style.transformOrigin = '50% 50%';
         }
     },
@@ -53,7 +49,6 @@ export default {
             figureStyle() {
                 // We test the browser to see if it's safari, and apply different 3d rotation css
                 // This also needs to happen in the first carouselItem.
-                console.log('Carousel.vue safari test: ', this.isSafari)
                 if (this.isSafari) {
                     return 'transform-origin: 50% 50% 50%;';
                 } else {
@@ -61,7 +56,7 @@ export default {
                 }
             },
             isSafari() {
-                return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+                return window.safari !== undefined;
             }
     },
     watch: {
@@ -100,11 +95,6 @@ export default {
             this.rotationDegree-= theta;
             this.currentIndex --;
         },
-        // setActiveIndex: function (ref) {
-        //     console.log('setting active index at ref: ', ref);
-        //     console.log(this.$refs);
-        //     this.$refs[ref].classlist = 'img-container active';
-        // },
         goToIndex: function (index) {
             const theta = 2 * 3.141592653589793 / this.carouselSides;
             // console.log('Moving to index #', index);
