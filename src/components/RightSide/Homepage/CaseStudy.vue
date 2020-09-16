@@ -62,9 +62,7 @@ export default {
         padding-bottom: 1vh;
         align-items: flex-start;
         grid-area: 11/1/17/2;
-        // background-color: lightcyan;
         padding-left: 1vw;
-        // border-bottom: 1px solid aquamarine;
         p {
             font-size: 1.2rem;
             font-weight: bold;
@@ -93,14 +91,8 @@ export default {
             }
         }
     }
-
-    // .technologies {
-
-    // }
-
     .sideline {
         grid-area: 1/12/17/13;
-        // border-left: 1px solid aquamarine;
     }
     .link-list {
         grid-area: 10/9/17/13;

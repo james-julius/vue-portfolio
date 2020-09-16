@@ -8,10 +8,20 @@
         </div>
         <DynamicSocials/>
         <div class="arrow">
-            <p>View<br/>My Portfolio</p>
+            <p>Scroll to view<br/>my portfolio</p>
             <span class="arrow-container">
-                <img :click="nextPage" src="../../../assets/ctarrow.svg" />
-                <p class="upright-p">SCROLL</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="115" viewBox="0 0 60 115">
+                    <g id="Group_1" data-name="Group 1" transform="translate(-42 -30)">
+                        <g id="Rectangle_1" data-name="Rectangle 1" transform="translate(42 30)" fill="#fff" stroke="#707070" stroke-linecap="round" stroke-width="5">
+                            <rect width="60" height="115" rx="30" stroke="none" fill="transparent"/>
+                            <rect x="2.5" y="2.5" width="55" height="110" rx="27.5" fill="transparent"/>
+                        </g>
+                        <g  id="Path_1" data-name="Path 1" transform="translate(68 52)" fill="#707070">
+                            <path class="mousewheel" d="M 4 7.5 C 2.070090055465698 7.5 0.5 5.929910182952881 0.5 4 C 0.5 2.070090055465698 2.070090055465698 0.5 4 0.5 C 5.929910182952881 0.5 7.5 2.070090055465698 7.5 4 C 7.5 5.929910182952881 5.929910182952881 7.5 4 7.5 Z" stroke="none"/>
+                            <path class="mousewheel" d="M 4 1 C 2.345789909362793 1 1 2.345789909362793 1 4 C 1 5.654210090637207 2.345789909362793 7 4 7 C 5.654210090637207 7 7 5.654210090637207 7 4 C 7 2.345789909362793 5.654210090637207 1 4 1 M 4 0 C 6.209139823913574 0 8 1.790860176086426 8 4 C 8 6.209139823913574 6.209139823913574 8 4 8 C 1.790860176086426 8 0 6.209139823913574 0 4 C 0 1.790860176086426 1.790860176086426 0 4 0 Z" stroke="none" fill="#707070"/>
+                        </g>
+                    </g>
+                </svg>
             </span>
         </div>
         <span class="sideline"/>
@@ -92,8 +102,22 @@ export default {
 
             @keyframes lightflash {
                 0% { opacity: 1}
-                50% {  opacity: 0.6}
+                50% {  opacity: 0.9}
                 100% { opacity: 1}
+            }
+            .mousewheel {
+                animation: scroll-wheel 2s infinite;
+                @keyframes scroll-wheel {
+                    0% { 
+                        transform: translateY(8px);
+                    }
+                    75% { 
+                        transform: translateY(0px);
+                    }
+                    100% {
+                        transform: translateY(8px);
+                    }
+                }
             }
             p {
                 text-align: left;
