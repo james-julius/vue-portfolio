@@ -6,11 +6,11 @@
         <div class="sub-heading">
             <h3>{{subHeading}}</h3>
         </div>
-
+        <DynamicSocials/>
         <div class="arrow">
             <p>View<br/>My Portfolio</p>
             <span class="arrow-container">
-                <img :click="nextPage" src="../../assets/ctarrow.svg" />
+                <img :click="nextPage" src="../../../assets/ctarrow.svg" />
                 <p class="upright-p">SCROLL</p>
             </span>
         </div>
@@ -18,12 +18,16 @@
     </div>
 </template>
 <script>
+import DynamicSocials from './DynamicSocials/DynamicSocials';
 export default {
     name: 'PageOne',
     props: {
         heading: String,
         subHeading: String,
         content: String
+    },
+    components: {
+        DynamicSocials
     },
     methods: {
         nextPage() {
@@ -56,6 +60,10 @@ export default {
         grid-area: 6/1/7/8;
     }
 
+    .dynamic-socials {
+        grid-area: 7/1/8/4;
+    }
+
     .arrow {
         display: flex;
         flex-direction: column;
@@ -63,9 +71,7 @@ export default {
         padding-bottom: 1vh;
         align-items: flex-start;
         grid-area: 11/1/17/4;
-        // background-color: lightcyan;
         padding-left: 1vw;
-        // border-bottom: 1px solid aquamarine;
 
         p {
             font-size: 1.2rem;

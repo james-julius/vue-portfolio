@@ -31,7 +31,16 @@ export default {
   },
   watch: {
       currentPage: function(newVal) {
-        if (newVal === 0) return;
+        if (newVal === 0) {
+          const crimson = '#dc143c';
+          gsap.to('.left-side', 2, {"--leftSide-bgColor": crimson});
+          gsap.to('nav', 2, {
+            "--nav-bgColor": crimson,
+            "--nav-borderColor": 'white',
+            "--nav-textColor":  'white'
+            });
+            return;
+        }
         // console.log('current page changed: ', newVal);
           let colorVars = globalState.caseStudies[newVal  - 1].colors;
           gsap.to('.left-side', 2, {"--leftSide-bgColor": colorVars.bgColor});

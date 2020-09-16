@@ -6,7 +6,8 @@
             :currentPage="currentPage"
         />
             <RightSide 
-            :currentPage="currentPage"
+                mode="homepage"
+                :currentPage="currentPage"
         />
     </div>
 </template>

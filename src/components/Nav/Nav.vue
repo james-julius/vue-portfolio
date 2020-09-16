@@ -1,10 +1,9 @@
 <template>
     <nav :class="navClassList">
-        <div class="nav-slider" @click="expandHideNav"/>
         <ul class="nav-list">
-            <li @click="$router.push('/')">Home</li>
-            <li @click="$router.push('/about')">About Me</li>
-            <li @click="$router.push('/contact')">Get in touch</li>
+            <li @click="handleNavClick('/')">Home</li>
+            <li @click="handleNavClick('/about')">About Me</li>
+            <li @click="handleNavClick('/contact')">Get in touch</li>
         </ul>
     </nav>
 </template>
@@ -18,11 +17,10 @@ export default {
         }
     },
     methods: {
-        expandHideNav() {
-            console.log('expand hide nav triggered');
-            (this.navClassList === 'expanded') ? 
-                this.navClassList === 'hidden' : 
-                this.navClassList === 'expanded';
+        handleNavClick(url) {
+            if (this.$router.currentRoute.path !== url) {
+                this.$router.push(url)
+            }
         }
     }
 }
@@ -49,16 +47,6 @@ nav {
         left: 356px;
         transition: 2s ease-in-out;
     }
-    // .nav-slider {
-    //     position: absolute;
-    //     left: -42px;
-    //     border: 21px solid transparent;
-    //     border-right: 21px solid crimson;
-    //     height: 0px;
-    //     width: 0px;
-    //     z-index: 11;
-    //     cursor: pointer;
-    // }
     ul {
         display: flex;
         height: 100%;
@@ -94,14 +82,6 @@ nav {
             bottom: -5px;
             background-image: linear-gradient( to top,  var(--rightSide-bgColor), var(--nav-text-color));
         }
-        // &:before {
-        //     content: "";
-        //     width: 100%;
-        //     height: 3px;
-        //     position: absolute;
-        //     top: 0px;
-        //     background-image: linear-gradient( to right, crimson, purple);
-        // }
     }
 }
 </style>

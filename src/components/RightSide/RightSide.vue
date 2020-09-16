@@ -1,36 +1,43 @@
 <template>
     <div ref="background" class="right-side">
-        <Homepage 
-            :heading="`James Julius Darby`" 
-            :subHeading="`Web developer based in Los Angeles, CA`"
-            :content="`Web developer based in Los Angeles, CA`"
-        />
-        <CaseStudy 
-            v-for="(caseStudy, index) in caseStudies"
-            :key="index"
-            :heading="caseStudy.heading"
-            :subHeading="caseStudy.subHeading"
-            :content="caseStudy.content"
-            :stack="caseStudy.stack"
-        />
+        <template v-if="mode === 'homepage'">
+            <Homepage 
+                :heading="`James Julius Darby`" 
+                :subHeading="`Web developer based in Los Angeles, CA`"
+                :content="`Web developer based in Los Angeles, CA`"
+            />
+            <CaseStudy 
+                v-for="(caseStudy, index) in caseStudies"
+                :key="index"
+                :heading="caseStudy.heading"
+                :subHeading="caseStudy.subHeading"
+                :content="caseStudy.content"
+                :stack="caseStudy.stack"
+            />
+        </template>
+        <template v-if="mode === 'about'">
+            <AboutMe/>
+        </template>
+        
     </div>
 </template>
 
 <script>
-import Homepage from './Homepage';
-import CaseStudy from './CaseStudy';
+import Homepage from './Homepage/Homepage';
+import AboutMe from './AboutMe/AboutMe';
+import CaseStudy from './Homepage/CaseStudy';
 import { globalState } from '../../Global';
 
 export default {
     name: 'RightSide',
     components: {
         Homepage,
+        AboutMe,
         CaseStudy
     },
     props: {
-        currentPage: Number
-    },
-    mounted() {
+        currentPage: Number,
+        mode: String
     },
     methods: {
         nextPage() {
