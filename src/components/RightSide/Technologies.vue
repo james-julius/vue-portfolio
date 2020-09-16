@@ -36,12 +36,20 @@ export default {
     computed: {
         validatedStack: function () {
             const storedData = {
+                'html': {
+                    name: 'HTML5',
+                    imageSrc: 'html5.png'
+                },
+                'css': {
+                    name: 'CSS3',
+                    imageSrc: 'CSS.png'
+                },
                 'laravel': {
                     name: 'Laravel',
                     imageSrc: 'laravel-logo.svg'
                 },
                 'react': {
-                    name: 'React',
+                    name: 'React.js',
                     imageSrc: 'reactjs.png',
                 },
                 'wordpress': {
@@ -54,9 +62,19 @@ export default {
                     imageSrc: 'woologo.svg',
                     imgClasses: ''
                 },
+                'squarespace': {
+                    name: 'Squarespace',
+                    imageSrc: 'squarespace.png',
+                    imgClasses: ''
+                },
+                'shopify': {
+                    name: 'Shopify',
+                    imageSrc: 'shopify.webp',
+                    imgClasses: ''
+                },
                 'mysql': {
                     name: 'MySQL',
-                    imageSrc: ''
+                    imageSrc: 'mysql.png'
                 }
             };
             let validated = [];
@@ -89,6 +107,9 @@ export default {
             list-style: none;
             margin: 0px;
             padding: 0px;
+            li {
+                font-weight: bold;
+            }
         }
     }
 </style>

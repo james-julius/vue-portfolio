@@ -45,7 +45,7 @@ export default {
         if (this.isSafari) {
             // console.log('THIS VVVVV')
             // console.log(this);    
-            console.log('will set transformOrigin to default')
+            console.log('will set transformOrigin to default');
             this.$refs.figure.style.transformOrigin = '50% 50%';
         }
     },
