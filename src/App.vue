@@ -73,6 +73,7 @@ export default {
 <style lang="scss">
 html {
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -88,6 +89,7 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

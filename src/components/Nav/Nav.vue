@@ -20,6 +20,8 @@ export default {
         handleNavClick(url) {
             if (this.$router.currentRoute.path !== url) {
                 this.$router.push(url)
+            } else {
+                document.body.scrollTop = 0;
             }
         }
     }
