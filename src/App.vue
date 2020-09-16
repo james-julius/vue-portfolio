@@ -27,11 +27,14 @@ export default {
         this.currentPage = currentPage;
         globalState.setCurrentPage(currentPage);
       }
-    }
-  },
-  watch: {
-      currentPage: function(newVal) {
-        if (newVal === 0) {
+    },
+    throttleAction(action, input) {
+      setTimeout(() => {
+        this.handleColorChange(input)
+      },100)
+    },
+    handleColorChange(currentPage) {
+        if (currentPage === 0) {
           const crimson = '#dc143c';
           gsap.to('.left-side', 2, {"--leftSide-bgColor": crimson});
           gsap.to('nav', 2, {
@@ -41,20 +44,26 @@ export default {
             });
             return;
         }
-        // console.log('current page changed: ', newVal);
-          let colorVars = globalState.caseStudies[newVal  - 1].colors;
+        // console.log('current page changed: ', currentPage);
+          let colorVars = globalState.caseStudies[currentPage  - 1].colors;
           gsap.to('.left-side', 2, {"--leftSide-bgColor": colorVars.bgColor});
           gsap.to('nav', 2, {
             "--nav-bgColor": colorVars.bgColor,
             "--nav-borderColor": colorVars.navBorderColor,
             "--nav-textColor": colorVars.navTextColor
             });
+    }
+  },
+  watch: {
+      currentPage: function(newVal) {
+        this.throttleAction(this.handleColorChange, newVal);
       }
   },
   data: function() {
       return {
         prevPage: 0,
-        currentPage: 0
+        currentPage: 0,
+        animationRunning: false
       }
     }
 }
