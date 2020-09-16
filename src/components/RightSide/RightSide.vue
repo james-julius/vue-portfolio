@@ -33,21 +33,6 @@ export default {
     mounted() {
     },
     methods: {
-        // handleScroll() {
-        //     console.log('handleScroll Called')
-        //     console.log(window.scrollY);
-        //     this.lastKnownScrollPosition = window.scrollY;
-
-        //     if (!this.currentlyScrolling) {
-        //         console.log('not currently scrolling');
-        //         window.requestAnimationFrame(function() {
-        //             console.log('reqAnimation frame running')
-        //             this.currentlyScrolling = false;
-        //         });
-
-        //         this.currentlyScrolling = true;
-        //     }
-        // },
         nextPage() {
             if (this.showCaseStudies) {
                 if (this.currentCaseStudy < this.caseStudies.length -1) {

@@ -22,8 +22,6 @@ export default {
     name: 'Technologies',
     methods: {
         using(technology) {
-            console.log('using called with technology: ', technology);
-            console.log(this.stack);
             if (this.stack.includes(technology)) {
                 console.log('test result: , ', true) 
                 return true;
@@ -99,16 +97,16 @@ export default {
 <style lang="scss">
     .technologies {
         grid-area: 7/9/17/13;
-        margin-bottom: 10px;
         .tech-header {
             border-bottom: 1px solid grey;
         }
         ul {
             list-style: none;
             margin: 0px;
-            padding: 0px;
+            padding: 10px 0px 0px 0px;
             li {
                 font-weight: bold;
+                margin: 2px auto;
             }
         }
     }

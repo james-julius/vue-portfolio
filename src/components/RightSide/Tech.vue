@@ -1,7 +1,10 @@
 <template>
     <li>
         <span :class="'logo-container ' + logoClasses">
-            <img :src="require(`@/assets/tech/${imageSrc}`)" :alt="imageAlt" style="max-width: 50px; height: 50px; width: auto;"/>
+            <img class="tech-logo"
+                :src="require(`@/assets/tech/${imageSrc}`)" 
+                :alt="imageAlt" style="max-width: 50px; height: 50px; width: auto;"
+            />
         </span>
         <span class="'text-container">
             <p>{{name}}</p>
@@ -40,8 +43,8 @@ export default {
             height: 100%;
             width: 30%;
             .tech-logo {
-                height: 30px;
-                width: 30px;
+                max-height: 50px;
+                max-width: 50px;
                 width: auto;
             }
             .text-container {

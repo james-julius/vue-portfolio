@@ -39,6 +39,8 @@ nav {
     background-color: crimson;
     transition: 2s ease-in-out;
     color: white;
+    --nav-textColor: white;
+    --nav-borderColor: white;
     &.hidden {
         left: -356px;
         transition: 2s ease-in-out;
@@ -70,12 +72,13 @@ nav {
             display: flex;
             align-items: center;
             justify-content: center;
-            border-right: 1px solid white;
-            border-left: 1px solid white;
+            border-right: 1px solid var(--nav-borderColor);
+            border-left: 1px solid var(--nav-borderColor);
+            color: var(--nav-textColor);
             font-weight: bold;
             cursor: pointer;
             &:first-child {
-                border-left: 2px solid white;   
+                border-left: 2px solid var(--nav-borderColor);   
             }
             &:hover {
                 background-image: linear-gradient(to bottom, var(--rightSide-bgColor), white);
@@ -89,7 +92,7 @@ nav {
             height: 5px;
             position: absolute;
             bottom: -5px;
-            background-image: linear-gradient( to top,  var(--rightSide-bgColor), white);
+            background-image: linear-gradient( to top,  var(--rightSide-bgColor), var(--nav-text-color));
         }
         // &:before {
         //     content: "";

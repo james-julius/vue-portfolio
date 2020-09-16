@@ -13,7 +13,11 @@ const globalState = {
             stack: ['laravel', 'wordpress', 'woocommerce', 'mysql'],
             imageSrc: 'uHealthMobile.png',
             iframeSrc: 'https://www.u-niquehealth.co.uk',
-            bgColor: '#f74040'
+            colors: {
+                bgColor: '#f74040',
+                navTextColor: 'white',
+                navBorderColor: 'white'
+            }
         },
         {
             heading: "CricketVision",
@@ -22,7 +26,11 @@ const globalState = {
             stack: ['html', 'css', 'react', 'strapi'],
             imageSrc: 'cricketVisionMobile.png',
             iframeSrc: 'https://app.cricketvision.co.uk',
-            bgColor: 'rgb(39, 169, 79)'
+            colors: {
+                bgColor: 'rgb(39, 169, 79)',
+                navTextColor: 'white',
+                navBorderColor: 'white'
+            }
         },
         {
             heading: "VolunteerSafe",
@@ -31,7 +39,11 @@ const globalState = {
             stack: ['html', 'css', 'react'],
             imageSrc: 'vSafeMobile.png',
             iframeSrc: 'https://www.volunteersafe.com',
-            bgColor: '#6074c4'
+            colors: {
+                bgColor: '#6074c4',
+                navTextColor: 'white',
+                navBorderColor: 'white'
+            }
         },
         {
             heading: "Cult Mia",
@@ -39,7 +51,11 @@ const globalState = {
             stack: ['shopify'],
             imageSrc: 'cultMiaMobile.png',
             iframeSrc: 'https://www.cultmia.com',
-            bgColor: '#fff'
+            colors: {
+                bgColor: '#eee',
+                navTextColor: 'rgb(20,20,20)',
+                navBorderColor: '#ddd'
+            }
         },
         {
             heading: "Reli",
@@ -47,7 +63,11 @@ const globalState = {
             stack: ['squarespace'],
             imageSrc: 'reliMobile.png',
             iframeSrc: 'https://reli.eco',
-            bgColor: '#303030'
+            colors: {
+                bgColor: '#303030',
+                navTextColor: 'white',
+                navBorderColor: 'white'
+            }
         }
     ]
 };

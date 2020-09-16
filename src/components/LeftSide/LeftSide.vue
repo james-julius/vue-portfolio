@@ -17,8 +17,6 @@
 <script>
 import Carousel from './Carousel';
 import Particles from './Particles';
-import gsap from 'gsap';
-import { globalState } from '../../Global';
 export default {
     name: 'LeftSide', 
     props: {
@@ -30,13 +28,6 @@ export default {
         return {
             classNames: '',
             leftSideStyle: ''
-        }
-    },
-    watch: {
-        currentPage: function(newVal) {
-            let bgColor = globalState.caseStudies[newVal  - 1].bgColor;
-            gsap.to('.left-side', 2, {"--leftSide-bgColor": bgColor});
-            gsap.to('nav', 2, {"--nav-bgColor": bgColor});
         }
     },
     components: {

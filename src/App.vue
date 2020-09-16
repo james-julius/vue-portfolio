@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import gsap from 'gsap';
 import { globalState } from './Global';
 export default {
   name: 'App',
@@ -27,6 +28,18 @@ export default {
         globalState.setCurrentPage(currentPage);
       }
     }
+  },
+  watch: {
+      currentPage: function(newVal) {
+        console.log('current page changed')
+          let colorVars = globalState.caseStudies[newVal  - 1].colors;
+          gsap.to('.left-side', 2, {"--leftSide-bgColor": colorVars.bgColor});
+          gsap.to('nav', 2, {
+            "--nav-bgColor": colorVars.bgColor,
+            "--nav-borderColor": colorVars.navBorderColor,
+            "--nav-textColor": colorVars.navTextColor
+            });
+      }
   },
   data: function() {
       return {
