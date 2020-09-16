@@ -28,7 +28,7 @@ export default {
     },
     methods: {
         randomColorFlow() {
-            const [r, g, b] = [Math.floor(Math.random()*255),Math.floor(Math.random()*255),Math.floor(Math.random()*255)]
+            const [r, g, b] = [Math.floor(Math.random()*210),Math.floor(Math.random()*210),Math.floor(Math.random()*210)]
             const randomColor = `rgb(${r},${g},${b})`;
             gsap.to('.left-side', 5, {"--leftSide-bgColor": randomColor});
             gsap.to('nav', 5, {
