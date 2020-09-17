@@ -3,7 +3,7 @@
         <span :class="'logo-container ' + logoClasses">
             <img class="tech-logo"
                 :src="require(`@/assets/tech/${imageSrc}`)" 
-                :alt="imageAlt" style="max-width: 50px; height: 50px; width: auto;"
+                :alt="imageAlt"
             />
         </span>
         <span class="'text-container">

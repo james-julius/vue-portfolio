@@ -48,11 +48,6 @@ export default {
             return (window.innerWidth <= 750) ? true : false;
         }
     },
-    methods: {
-        nextPage() {
-
-        }
-    }
 }
 </script>
 

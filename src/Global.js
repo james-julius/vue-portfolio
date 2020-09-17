@@ -9,9 +9,8 @@ const globalState = {
         {
             heading: "Unique Health",
             subHeading: 'A digital health start-up specialised in personalised nutrition and consultations',
-            content: `Unique Health offers an online quiz to schools and families to measure their children's health. Wanting to expand into the D2C market, they approached me to 
-                      fully re-design their website and overhaul the existing back-end to implement SSO with a paywalled quiz. I designed the website as a custom woocommerce theme, 
-                      installed tiered user roles and authentication gates in the Laravel app, fully integrated with the website through a dashboard and SSO.`,
+            content: `Unique Health offers an online quiz to schools and families to measure their children's health. \n \n Wanting to expand into the D2C market, they 
+                    approached me to fully re-design their website and consult on how to improve their existing site and quiz web-app. \n \n Following an initial consultation, I re-designed the website as a custom woocommerce theme, giving them full e-commerce functionality and an editable blog. I then overhauled the existing Laravel application and database to tier and gate access within the app to premium users. Lastly, I connected the Woocommerce website via SSO, integrated user databases across the server, and created a pair of dashboards for user account management.`,
             stack: ['laravel', 'wordpress', 'woocommerce', 'mysql', 'html', 'css'],
             imageSrc: 'uHealthMobile.png',
             iframeSrc: 'https://www.u-niquehealth.co.uk',
@@ -23,16 +22,9 @@ const globalState = {
         },
         {
             heading: "CricketVision",
-            subHeading: 'A coaching company based in Hertfordshire, UK.',
-            content: `I designed and developed the front-end for coach management software designed for cricket clubs. The React.js app serves three kinds of users: Clubs, Coaches and 
-                      Customers.
-
-                      Clubs can manage job requests from customers, shown through a live feed of requests. They may assign coaches to each job, and handle job applications from coaches through the Strapi back-end.
-                      
-                      Coaches can apply to clubs, and be able to apply for jobs handled through CricketVision itself. Customers may log onto the app and request coaching sessions from clubs and coaches.
-
-                      Coaches and clubs are delivered programmatic emails with upcoming jobs, the status of each, and reminders before jobs are due to take place.
-                    `,
+            subHeading: 'A UK-based cricket coaching company.',
+            content: `CricketVision manages a team of coaches for their own client-base, as well as other clubs across Hertfordshire, UK. They sought to become a tech company by automating in-house processes. \n
+                    To do so, I designed and developed the entire front-end for a coach management web-app. Built in React.js, it serves three user groups: Clubs, Coaches and Customers. Clubs manage job requests from customers, and job requests from coaches shown through a live feed of requests. \n \n Coaches can apply to clubs, and deliver private sessions once approved by CricketVision. Customers may log onto the app and request coaching sessions from clubs and coaches.`,
             stack: ['html', 'css', 'react', 'strapi'],
             imageSrc: 'cricketVisionMobile.png',
             iframeSrc: 'https://app.cricketvision.co.uk',
@@ -45,9 +37,9 @@ const globalState = {
         {
             heading: "VolunteerSafe",
             subHeading: 'Created in COVID-19, VolunteerSafe is an Identity Verification platform for grassroots volunteering organisations.',
-            content: `This web-app allowed grassroots volunteering organisations to request an account, and be able to pass volunteers through a series of automated background checks.
-                      After passing the background checks, the volunteers can join organisations as a verified volunteer. I designed and developed the front-end in Adobe XD, and 
-                      co-coordinated a team of x3 volunteer developers in creating the front-end. Additionally, I handled Jumio and Twilio API integrations.`,
+            content: `This web-app allowed grassroots volunteering organisations to request an account, and be able to pass volunteers through a series of automated background checks. After passing the background checks, the volunteers can join organisations as a verified volunteer. \n
+            I designed and developed the front-end in Adobe XD and React.js. I co-coordinated the team of x5 volunteer developers in creating the front-end, and worked with volunteering groups to understand their requirements, and build in features they would need to use. \n
+            Lastly, I handled Jumio and Twilio API integrations.`,
             stack: ['html', 'css', 'react'],
             imageSrc: 'vSafeMobile.png',
             iframeSrc: 'https://www.volunteersafe.com',
@@ -60,9 +52,8 @@ const globalState = {
         {
             heading: "Cult Mia",
             subHeading: 'Cult Mia is an e-commerce store that curates and sells designer products from around the world.',
-            content: `I'm currently working with Cult Mia to deliver a slew of shopify theme customisations that enhance the shopper experience and seamlessly integrate with the site's premium feel.
-                      Work to date includes installing a custom data layer within the app to allow for deeper customisation, creating shopify page templates and theme components using Shopify's
-                      templating language, Liquid.`,
+            content: `I'm currently working with Cult Mia to deliver a slew of shopify theme customisations that enhance their online shopping experience and seamlessly integrate with the site's premium feel. \n
+                      Work to date includes installing a custom data layer within the app to allow for deeper customisation, as well as creating Shopify page templates and theme components using Shopify's templating language Liquid.`,
             stack: ['shopify', 'html', 'css'],
             imageSrc: 'cultMiaMobile.png',
             iframeSrc: 'https://www.cultmia.com',
@@ -75,8 +66,9 @@ const globalState = {
         {
             heading: "Reli",
             subHeading: `ReLi is making the world's next generation of eco-friendly technology, beginning with phone cases.`,
-            content: ` I've been working with them to customise their squarespace site, install all marketing tech integrations and advise on digital marketing strategy.
-            This includes installing Inspectlet, Google Tag Manager, Analytics and Optimize. We've worked to create a series of cross-site A/B/C optimisations to target different consumer audiences and channes.`,
+            content: `I've been working with ReLi to customise their Squarespace site, and optimise it to maximise conversions across their e-commerce funnel. \n
+            To date, I've installed all marketing tech integrations for the company and have been advising on digital marketing strategy.
+            This includes installing Inspectlet, Google Tag Manager, Analytics and Optimize. We've worked together to code a series of cross-site A/B/C optimisations that target different consumer audiences and channes.`,
             stack: ['squarespace', 'html', 'css'],
             imageSrc: 'reliMobile.png',
             iframeSrc: 'https://reli.eco',

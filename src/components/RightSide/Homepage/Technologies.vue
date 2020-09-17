@@ -129,8 +129,8 @@ export default {
                 li {
                     display: flex;
                     justify-content: space-around;
-                    width: 50vw;
-                    max-width: 50vw;
+                    width: 49vw;
+                    max-width: 49vw;
                     .logo-container {
                         margin-right: 5px;
                     }

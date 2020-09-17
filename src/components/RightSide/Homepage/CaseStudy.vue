@@ -56,6 +56,9 @@ export default {
         text-align: left;
         grid-area: 4/1/13/8;
         margin-left: 2vw;
+        p {
+            white-space: pre-line;
+        }
     }
 
     .sideline {
