@@ -55,6 +55,11 @@ export default {
                     imageSrc: 'wordpress.png',
                     imgClasses: ''
                 },
+                'strapi': {
+                    name: 'Strapi',
+                    imageSrc: 'strapi.webp',
+                    imgClasses: ''
+                },
                 'woocommerce': {
                     name: 'WooCommerce',
                     imageSrc: 'woologo.svg',
