@@ -1,7 +1,7 @@
 <template>
     <div class="rightPage">
         <div class="headline">
-            <h1>{{heading}}</h1>
+            <h2>{{heading}}</h2>
             <h4>{{subHeading}}</h4>
         </div>
         <div class="content">
@@ -39,9 +39,12 @@ export default {
     h1 {
         font-size: 3rem;
     }
-    h1, h3 {
+    h2 {
+        font-size: 2.3rem;
+    }
+    h1, h2, h3, h4 {
         padding-left: 2vw;
-        margin: 0px;
+        margin: 10px 0px;
         text-align: left;
     }
     .headline {
@@ -49,48 +52,12 @@ export default {
     }
     .content {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         text-align: left;
-        grid-area: 4/1/7/8;
+        grid-area: 4/1/13/8;
         margin-left: 2vw;
     }
 
-    .arrow {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding-bottom: 1vh;
-        align-items: flex-start;
-        grid-area: 11/1/17/2;
-        padding-left: 1vw;
-        p {
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-align: left;
-            margin-bottom: 5px;
-            &.upright-p {
-                writing-mode: vertical-rl;
-                text-orientation: upright;
-                letter-spacing: -5px;
-                margin: 0px;
-                font-size: 1.2rem;
-            }
-        }
-        .arrow-container {
-            display: flex;
-            p {
-                text-align: left;
-                position: relative;
-                right: 6px;
-            }
-            img {
-                width: 50%;
-                position: relative;
-                right: 14px;
-                bottom: 2px;
-            }
-        }
-    }
     .sideline {
         grid-area: 1/12/17/13;
     }
@@ -115,10 +82,20 @@ export default {
                 font-weight: bold;
                 font-size: 1.15rem;
                 cursor: pointer;
-                border-bottom: 5px solid crimson;
+                border-bottom: 5px solid #dc143c;
             }
         }
     }
-
+    @media (max-width: 750px) {
+        .headline {
+            grid-area: 3/1/4/17;
+        }
+        .content {
+            grid-area: 4/1/10/17;
+        }
+        .technologies {
+            grid-area: 11/1/14/16;
+        }
+    }
 }
 </style>

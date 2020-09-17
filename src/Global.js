@@ -11,8 +11,8 @@ const globalState = {
             subHeading: 'A digital health start-up specialised in personalised nutrition and consultations',
             content: `Unique Health offers an online quiz to schools and families to measure their children's health. Wanting to expand into the D2C market, they approached me to 
                       fully re-design their website and overhaul the existing back-end to implement SSO with a paywalled quiz. I designed the website as a custom woocommerce theme, 
-                      installed tiered user roles and gates in the Laravel app, fully integrated with the website through a dashboard and SSO.`,
-            stack: ['laravel', 'wordpress', 'woocommerce', 'mysql'],
+                      installed tiered user roles and authentication gates in the Laravel app, fully integrated with the website through a dashboard and SSO.`,
+            stack: ['laravel', 'wordpress', 'woocommerce', 'mysql', 'html', 'css'],
             imageSrc: 'uHealthMobile.png',
             iframeSrc: 'https://www.u-niquehealth.co.uk',
             colors: {
@@ -63,7 +63,7 @@ const globalState = {
             content: `I'm currently working with Cult Mia to deliver a slew of shopify theme customisations that enhance the shopper experience and seamlessly integrate with the site's premium feel.
                       Work to date includes installing a custom data layer within the app to allow for deeper customisation, creating shopify page templates and theme components using Shopify's
                       templating language, Liquid.`,
-            stack: ['shopify'],
+            stack: ['shopify', 'html', 'css'],
             imageSrc: 'cultMiaMobile.png',
             iframeSrc: 'https://www.cultmia.com',
             colors: {
@@ -77,7 +77,7 @@ const globalState = {
             subHeading: `ReLi is making the world's next generation of eco-friendly technology, beginning with phone cases.`,
             content: ` I've been working with them to customise their squarespace site, install all marketing tech integrations and advise on digital marketing strategy.
             This includes installing Inspectlet, Google Tag Manager, Analytics and Optimize. We've worked to create a series of cross-site A/B/C optimisations to target different consumer audiences and channes.`,
-            stack: ['squarespace'],
+            stack: ['squarespace', 'html', 'css'],
             imageSrc: 'reliMobile.png',
             iframeSrc: 'https://reli.eco',
             colors: {

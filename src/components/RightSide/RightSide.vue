@@ -1,11 +1,7 @@
 <template>
     <div ref="background" class="right-side">
         <template v-if="mode === 'homepage'">
-            <Homepage 
-                :heading="`James Julius Darby`" 
-                :subHeading="`Web developer based in Los Angeles, CA`"
-                :content="`Web developer based in Los Angeles, CA`"
-            />
+            <Homepage/>
             <CaseStudy 
                 v-for="(caseStudy, index) in caseStudies"
                 :key="index"

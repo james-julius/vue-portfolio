@@ -19,7 +19,8 @@ export default {
       const docBody = document.body;
       let pageHeight = window.innerHeight;
       let currentScroll = docBody.scrollTop;
-      let currentPage = Math.floor(currentScroll / pageHeight);
+      // Pages are 90vh
+      let currentPage = Math.floor(currentScroll / pageHeight * .9);
       if (currentPage !== this.prevPage) {
         // console.log('prevPage: ', this.prevPage);
         // console.log('page is now: ', currentPage);
@@ -44,7 +45,6 @@ export default {
             });
             return;
         }
-        // console.log('current page changed: ', currentPage);
           let colorVars = globalState.caseStudies[currentPage  - 1].colors;
           gsap.to('.left-side', 2, {"--leftSide-bgColor": colorVars.bgColor});
           gsap.to('nav', 2, {
