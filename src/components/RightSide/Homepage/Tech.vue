@@ -9,6 +9,7 @@
         <span class="'text-container">
             <p>{{name}}</p>
         </span>
+        <br/>
     </li>
 </template>
 

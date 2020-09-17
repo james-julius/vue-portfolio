@@ -128,7 +128,7 @@ export default {
                 flex-wrap: wrap;
                 li {
                     display: flex;
-                    justify-content: flex-start;
+                    justify-content: space-around;
                     width: 50vw;
                     max-width: 50vw;
                     .logo-container {

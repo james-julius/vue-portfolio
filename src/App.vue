@@ -17,13 +17,13 @@ export default {
     handleScroll() {
       // console.log('body scrolling');
       const docBody = document.body;
-      let pageHeight = window.innerHeight;
+      let pageHeight = window.innerHeight * .9;
       let currentScroll = docBody.scrollTop;
       // Pages are 90vh
-      let currentPage = Math.floor(currentScroll / pageHeight * .9);
+      let currentPage = Math.floor(currentScroll / pageHeight);
       if (currentPage !== this.prevPage) {
-        // console.log('prevPage: ', this.prevPage);
-        // console.log('page is now: ', currentPage);
+        console.log('prevPage: ', this.prevPage);
+        console.log('page is now: ', currentPage);
         this.prevPage = currentPage;
         this.currentPage = currentPage;
         globalState.setCurrentPage(currentPage);
