@@ -8,6 +8,7 @@
                 :heading="caseStudy.heading"
                 :subHeading="caseStudy.subHeading"
                 :content="caseStudy.content"
+                :desktopImg="caseStudy.desktopImg"
                 :stack="caseStudy.stack"
             />
         </template>

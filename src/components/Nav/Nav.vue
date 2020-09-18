@@ -41,6 +41,7 @@ nav {
     color: white;
     --nav-textColor: white;
     --nav-borderColor: white;
+    border-bottom: 1px solid white;
     &.hidden {
         left: -356px;
         transition: 2s ease-in-out;

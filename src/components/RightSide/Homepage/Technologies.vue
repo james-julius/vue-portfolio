@@ -101,7 +101,8 @@ export default {
 
 <style lang="scss">
     .technologies {
-        grid-area: 3/9/13/13;
+        grid-area: 1/9/11/13;
+        margin-top: 4vh;
         .tech-header {
             border-bottom: 1px solid grey;
         }

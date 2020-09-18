@@ -9,10 +9,10 @@ const globalState = {
         {
             heading: "Unique Health",
             subHeading: 'A digital health start-up specialised in personalised nutrition and consultations',
-            content: `Unique Health offers an online quiz to schools and families to measure their children's health. \n \n Wanting to expand into the D2C market, they 
-                    approached me to fully re-design their website and consult on how to improve their existing site and quiz web-app. \n \n Following an initial consultation, I re-designed the website as a custom woocommerce theme, giving them full e-commerce functionality and an editable blog. I then overhauled the existing Laravel application and database to tier and gate access within the app to premium users. Lastly, I connected the Woocommerce website via SSO, integrated user databases across the server, and created a pair of dashboards for user account management.`,
+            content: `Unique Health offers an online quiz to schools and families to measure their children's health. Wanting to expand into the D2C market, they approached me to fully re-design their website and consult on how to improve their existing site and quiz web-app. \n \n In response, I created the new website as a custom woocommerce theme, giving them full e-commerce functionality and an editable blog. I overhauled the existing Laravel application and database to tier access to premium users. Lastly, I connected the Woocommerce website via SSO and created a unified user database.`,
             stack: ['laravel', 'wordpress', 'woocommerce', 'mysql', 'html', 'css'],
             imageSrc: 'uHealthMobile.png',
+            desktopImg: 'unique-health-desktop.png',
             iframeSrc: 'https://www.u-niquehealth.co.uk',
             colors: {
                 bgColor: '#f74040',
@@ -24,9 +24,10 @@ const globalState = {
             heading: "CricketVision",
             subHeading: 'A UK-based cricket coaching company.',
             content: `CricketVision manages a team of coaches for their own client-base, as well as other clubs across Hertfordshire, UK. They sought to become a tech company by automating in-house processes. \n
-                    To do so, I designed and developed the entire front-end for a coach management web-app. Built in React.js, it serves three user groups: Clubs, Coaches and Customers. Clubs manage job requests from customers, and job requests from coaches shown through a live feed of requests. \n \n Coaches can apply to clubs, and deliver private sessions once approved by CricketVision. Customers may log onto the app and request coaching sessions from clubs and coaches.`,
+                    To do so, I designed and developed the entire front-end for a coach management web-app. Built in React.js, it serves three user groups: Clubs, Coaches and Customers. Clubs manage job requests from customers, and job requests from coaches shown through a live feed of requests.`,
             stack: ['html', 'css', 'react', 'strapi'],
             imageSrc: 'cricketVisionMobile.png',
+            desktopImg: 'cricketvision-desktop.png',
             iframeSrc: 'https://app.cricketvision.co.uk',
             colors: {
                 bgColor: 'rgb(39, 169, 79)',
@@ -38,10 +39,10 @@ const globalState = {
             heading: "VolunteerSafe",
             subHeading: 'Created in COVID-19, VolunteerSafe is an Identity Verification platform for grassroots volunteering organisations.',
             content: `This web-app allowed grassroots volunteering organisations to request an account, and be able to pass volunteers through a series of automated background checks. After passing the background checks, the volunteers can join organisations as a verified volunteer. \n
-            I designed and developed the front-end in Adobe XD and React.js. I co-coordinated the team of x5 volunteer developers in creating the front-end, and worked with volunteering groups to understand their requirements, and build in features they would need to use. \n
-            Lastly, I handled Jumio and Twilio API integrations.`,
+            I designed and developed the front-end in Adobe XD and React.js. I co-coordinated the team of x5 volunteer developers in creating the front-end, and worked with volunteering groups to understand their requirements, and build in features they would need to use.`,
             stack: ['html', 'css', 'react'],
             imageSrc: 'vSafeMobile.png',
+            desktopImg: 'volunteersafe-desktop.png',
             iframeSrc: 'https://www.volunteersafe.com',
             colors: {
                 bgColor: '#6074c4',
@@ -56,6 +57,7 @@ const globalState = {
                       Work to date includes installing a custom data layer within the app to allow for deeper customisation, as well as creating Shopify page templates and theme components using Shopify's templating language Liquid.`,
             stack: ['shopify', 'html', 'css'],
             imageSrc: 'cultMiaMobile.png',
+            desktopImg: 'cult-mia-desktop.png',
             iframeSrc: 'https://www.cultmia.com',
             colors: {
                 bgColor: '#eee',
@@ -71,6 +73,7 @@ const globalState = {
             This includes installing Inspectlet, Google Tag Manager, Analytics and Optimize. We've worked together to code a series of cross-site A/B/C optimisations that target different consumer audiences and channes.`,
             stack: ['squarespace', 'html', 'css'],
             imageSrc: 'reliMobile.png',
+            desktopImg: 'reli-desktop.png',
             iframeSrc: 'https://reli.eco',
             colors: {
                 bgColor: '#303030',

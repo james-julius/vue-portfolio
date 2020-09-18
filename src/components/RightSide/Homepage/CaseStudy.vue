@@ -10,6 +10,10 @@
         <Technologies
             :stack="stack"
         />
+        <div class="color-spacer"/>
+        <div class="desktop-img">
+                <img :src="require(`@/assets/${desktopImg}`)" alt="Desktop image of site"/>
+        </div> 
     </div>
 </template>
 
@@ -25,7 +29,8 @@ export default {
         heading: String,
         subHeading: String,
         content: String,
-        stack: Array
+        stack: Array,
+        desktopImg: String
     }
 }
 </script>
@@ -48,56 +53,48 @@ export default {
         text-align: left;
     }
     .headline {
-        grid-area: 3/1/4/8;
+        grid-area: 1/1/2/8;
     }
     .content {
         display: flex;
         align-items: flex-start;
         text-align: left;
-        grid-area: 4/1/13/8;
+        grid-area: 2/1/11/8;
         margin-left: 2vw;
         p {
             white-space: pre-line;
         }
     }
-
-    .sideline {
-        grid-area: 1/12/17/13;
+    .color-spacer {
+        grid-area: 15/1/16/16;
+        background-color: var(--leftSide-bgColor);
     }
-    .link-list {
-        grid-area: 10/9/17/13;
-        ul {
+
+    .desktop-img {
+        grid-area: 9/1/14/7;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left center;
+        display: flex;
+        margin-left: 2vw;
+        img {
             height: 100%;
-            width: 100%;
-            margin: 0px;
-            padding: 0px;
-            display: flex;
-            flex-direction: column;
-            justify-content: stretch;
-            align-items: stretch;
-            list-style: none;
-            li {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex: 1 1 auto;
-                background-color: lemonchiffon;
-                font-weight: bold;
-                font-size: 1.15rem;
-                cursor: pointer;
-                border-bottom: 5px solid #dc143c;
-            }
+            width: auto;
         }
     }
+
     @media (max-width: 750px) {
         .headline {
-            grid-area: 3/1/4/17;
+            grid-area: 1/1/2/17;
         }
         .content {
-            grid-area: 4/1/10/17;
+            grid-area: 2/1/8/17;
         }
         .technologies {
-            grid-area: 11/1/14/16;
+            grid-area: 9/1/12/16;
+        }
+        .desktop-img {
+            display: none;
         }
     }
 }
