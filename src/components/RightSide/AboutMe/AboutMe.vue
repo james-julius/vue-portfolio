@@ -17,7 +17,7 @@ export default {
     display: grid;
     grid-template: repeat(1fr, 12), repeat(1fr, 8);
     .heading {
-        
+        grid-area: 2/2/4/7;
     }
 }
 </style>

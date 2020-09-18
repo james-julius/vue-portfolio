@@ -81,6 +81,19 @@ $apothem: 25vw / (2 * (math.tan($PI / $n))) * 1.05;
             iframe {
                 display: none;
             }
+            .loading-spinner {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 5;
+                border-radius: 80px;
+                background-color: var(--leftSide-bgColor);
+            }
             // The active class decides if we're using an iframe, or a still image
             img, iframe {
                 position: relative;
@@ -88,7 +101,7 @@ $apothem: 25vw / (2 * (math.tan($PI / $n))) * 1.05;
                 left: 1%;
                 height: 95.5%;
                 width: 93%;
-                z-index: 4;
+                z-index: 6;
                 border-radius: 25px;
             }
             &.active {
@@ -97,7 +110,6 @@ $apothem: 25vw / (2 * (math.tan($PI / $n))) * 1.05;
                 }
                 iframe {
                     display: block;
-                    background-color: var(--leftSide-bgColor);
                     // z-index: 4;
                 }
             }

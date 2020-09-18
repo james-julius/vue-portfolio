@@ -1,10 +1,8 @@
 <template>
-    <div :ref="refProp" :style="additionalStyle" :class="`img-container ${carouselClasses}`" @hover="handleHover(ref)">
+    <div :style="additionalStyle" :class="`img-container ${carouselClasses}`" @hover="handleHover(ref)">
         <img :src="require(`@/assets/${imageSrc}`)" />
-        <!-- <div class="iframe-container"> -->
-            <!-- <svg :src="require(`@/assets/brightLoader.svg`)" /> -->
-            <iframe :src="loadedIFrameSrc"/>
-        <!-- </div> -->
+        <LoadingSpinner v-if="iFrameLoading" shade="light"/>
+        <iframe :ref="`iframe-ref-${itemIndex}`" :src="loadedIFrameSrc"/>
         <div class="scrim"/>
         <span class="visitSiteButton" @click="setActiveIFrame(refProp)">Activate Site</span>
     </div>
@@ -12,10 +10,11 @@
 
 <script>
 import './Carousel.scss';
+import LoadingSpinner from '../LoadingSpinner';
+
 export default {
     name: 'CarouselItem',
     props: [
-        'refProp', 
         'imageSrc', 
         'iframeSrc',
         'carouselClassList',
@@ -25,9 +24,12 @@ export default {
     ],
     data: function() {
             return {
-                loadedIFrameSrc: '',
-                carouselClasses: this.carouselClassList
+                carouselClasses: this.carouselClassList,
+                iFrameLoading: false
             }
+    },
+    components: {
+        LoadingSpinner
     },
     computed: {
         additionalStyle() {
@@ -51,11 +53,12 @@ export default {
             // Here we only load the iframe src when the active class is present. Otherwise, all iframes will load upon page load.
             this.loadedIFrameSrc = this.iframeSrc;
             this.carouselClasses = 'selected active';
+            this.iFrameLoading = true;
+            this.$refs[`iframe-ref-${this.itemIndex}`].onload(() => {
+                console.log('iframe has loaded');
+                this.iFrameLoading = false;
+            });
         },
     }
 }
 </script>
-
-<style scoped>
-
-</style>
