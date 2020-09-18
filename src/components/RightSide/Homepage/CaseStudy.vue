@@ -14,7 +14,7 @@
                 <img :src="require(`@/assets/${desktopImg}`)" alt="Desktop image of site"/>
         </div> 
         <div class="buttons">
-            <router-link to="/contact">
+            <router-link to="/get-quote">
                 <div class="case-study-button">
                     {{ctaButtonText}}
                 </div>
@@ -94,6 +94,7 @@ export default {
         }
         .case-study-button {
             border-radius: 5px;
+            transition: 2s ease-in-out;
             color: var(--leftSide-bgColor);
             border: 1px solid var(--leftSide-bgColor);
             width: 100%;
@@ -102,6 +103,7 @@ export default {
             align-items: center;
             justify-content: center;
             &:hover {
+                transition: .5s ease-in-out;
                 background-color: var(--leftSide-bgColor);
                 box-shadow: 0 0 10px var(--leftSide-bgColor);
                 color: white;
@@ -110,6 +112,7 @@ export default {
     }
     .color-spacer {
         grid-area: 15/1/16/16;
+        transition: 2s ease-in-out;
         background-color: var(--leftSide-bgColor);
     }
 

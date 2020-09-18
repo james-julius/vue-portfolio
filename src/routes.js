@@ -1,6 +1,9 @@
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
+// Lazy loaded routes
+const [Home, About, Quote] = [
+  () => import('./pages/Home'), 
+  () => import('./pages/About'), 
+  () => import('./pages/Quote')
+];
 
 // Routes for the application
 const routes = [
@@ -15,8 +18,8 @@ const routes = [
       props: true
     },
     {
-      path: '/contact',
-      component: Contact,
+      path: '/get-quote',
+      component: Quote,
       props: true
     }
   ];

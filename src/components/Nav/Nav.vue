@@ -3,7 +3,7 @@
         <ul class="nav-list">
             <li><router-link to="/" exact>Home</router-link></li>
             <li><router-link to="/about">About Me</router-link></li>
-            <li><router-link to="/contact">Get in touch</router-link></li>
+            <li><router-link to="/get-quote">Get in touch</router-link></li>
         </ul>
     </nav>
 </template>
@@ -62,12 +62,14 @@ nav {
         margin: 0px;
         list-style: none;
         padding:0px;
+    transition: 2s ease-in-out;
         background-color: var(--nav-bgColor);
         li {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: 2s ease-in-out;
             border-right: 1px solid var(--nav-borderColor);
             border-left: 1px solid var(--nav-borderColor);
             font-weight: bold;

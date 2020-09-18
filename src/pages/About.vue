@@ -16,7 +16,6 @@
 import Nav from '../components/Nav/Nav';
 import LeftSide from '../components/LeftSide/LeftSide';
 import RightSide from '../components/RightSide/RightSide';
-import gsap from 'gsap';
 
 export default {
     name: 'About',
@@ -30,12 +29,8 @@ export default {
         randomColorFlow() {
             const [r, g, b] = [Math.floor(Math.random()*210),Math.floor(Math.random()*210),Math.floor(Math.random()*210)]
             const randomColor = `rgb(${r},${g},${b})`;
-            gsap.to('.left-side', 5, {"--leftSide-bgColor": randomColor});
-            gsap.to('nav', 5, {
-                "--nav-bgColor":  randomColor,
-                "--nav-borderColor":  'white',
-                "--nav-textColor": 'white'
-            });
+            document.documentElement.style.setProperty('--leftSide-bgColor', randomColor);
+            document.documentElement.style.setProperty('--nav-bgColor', randomColor);
         }
     },
     mounted() {
@@ -44,14 +39,10 @@ export default {
         
         // Keep the colours changing. Interval doesn't launch immediately
         this.letTheColorsKeepFlowing = setInterval(() => {
-            const [r, g, b] = [Math.floor(Math.random()*255),Math.floor(Math.random()*255),Math.floor(Math.random()*255)]
+            const [r, g, b] = [Math.floor(Math.random()*210),Math.floor(Math.random()*210),Math.floor(Math.random()*210)]
             const randomColor = `rgb(${r},${g},${b})`;
-            gsap.to('.left-side', 5, {"--leftSide-bgColor": randomColor});
-            gsap.to('nav', 5, {
-                "--nav-bgColor":  randomColor,
-                "--nav-borderColor":  'white',
-                "--nav-textColor": 'white'
-            });
+            document.documentElement.style.setProperty('--leftSide-bgColor', randomColor);
+            document.documentElement.style.setProperty('--nav-bgColor', randomColor);
         }, 5000);
     },
     beforeDestroy() {

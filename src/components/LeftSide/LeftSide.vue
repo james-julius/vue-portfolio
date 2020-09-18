@@ -39,6 +39,7 @@ export default {
 
 <style lang="scss">
 .left-side {
+    transition: 2s ease-in-out;
     background-color: var(--leftSide-bgColor);
     height: 100%;
     width: 100%;

@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import gsap from 'gsap';
 import { globalState } from './Global';
 export default {
   name: 'App',
@@ -35,26 +34,19 @@ export default {
       },100)
     },
     handleColorChange(currentPage) {
+        const colorVars = globalState.caseStudies[currentPage  - 1].colors;
         if (currentPage === 0) {
           const crimson = '#dc143c';
-          gsap.to('.left-side', 2, {"--leftSide-bgColor": crimson});
-          gsap.to('.color-spacer', 2, {"--leftSide-bgColor": crimson});
-          gsap.to('nav', 2, {
-            "--nav-bgColor": crimson,
-            "--nav-borderColor": 'white',
-            "--nav-textColor":  'white'
-            });
-            return;
+          document.documentElement.style.setProperty('--leftSide-bgColor', crimson);
+          document.documentElement.style.setProperty('--nav-bgColor', crimson);
+          document.documentElement.style.setProperty('--nav-borderColor', 'white');
+          document.documentElement.style.setProperty('--nav-textColor', 'white');
+        } else {
+          document.documentElement.style.setProperty('--leftSide-bgColor', colorVars.bgColor);
+          document.documentElement.style.setProperty('--nav-bgColor', colorVars.bgColor);
+          document.documentElement.style.setProperty('--nav-borderColor', colorVars.navBorderColor);
+          document.documentElement.style.setProperty('--nav-textColor', colorVars.navTextColor);
         }
-          let colorVars = globalState.caseStudies[currentPage  - 1].colors;
-          gsap.to('.left-side', 2, {"--leftSide-bgColor": colorVars.bgColor});
-          gsap.to('.color-spacer', 2, {"--leftSide-bgColor": colorVars.bgColor});
-          gsap.to('.case-study-button', 2, {"--leftSide-bgColor": colorVars.bgColor});
-          gsap.to('nav', 2, {
-            "--nav-bgColor": colorVars.bgColor,
-            "--nav-borderColor": colorVars.navBorderColor,
-            "--nav-textColor": colorVars.navTextColor
-            });
     }
   },
   watch: {
@@ -82,6 +74,9 @@ html {
 :root {
   --leftSide-bgColor: crimson;
   --rightSide-bgColor: white;
+  --nav-bgColor: crimson;
+  --nav-borderColor: white;
+  --nav-textColor: white;
 }
 
 body {
@@ -120,6 +115,7 @@ body {
       flex-direction: column;
       min-height: 100vh;
       width: 50vw;
+      transition: 2s ease-in-out;
       background-color: var(--rightSide-bgColor);
       // background-color: #222222;
       position: relative;
