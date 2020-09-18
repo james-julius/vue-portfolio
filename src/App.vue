@@ -36,9 +36,8 @@ export default {
     handleColorChange(currentPage) {
         const colorVars = globalState.caseStudies[currentPage  - 1].colors;
         if (currentPage === 0) {
-          const crimson = '#dc143c';
-          document.documentElement.style.setProperty('--leftSide-bgColor', crimson);
-          document.documentElement.style.setProperty('--nav-bgColor', crimson);
+          document.documentElement.style.setProperty('--leftSide-bgColor', 'crimson');
+          document.documentElement.style.setProperty('--nav-bgColor', 'crimson');
           document.documentElement.style.setProperty('--nav-borderColor', 'white');
           document.documentElement.style.setProperty('--nav-textColor', 'white');
         } else {

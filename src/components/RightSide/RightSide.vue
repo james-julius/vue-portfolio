@@ -23,16 +23,14 @@
 
 <script>
 import Homepage from './Homepage/Homepage';
-import AboutMe from './AboutMe/AboutMe';
-import CaseStudy from './Homepage/CaseStudy';
 import { globalState } from '../../Global';
 
 export default {
     name: 'RightSide',
     components: {
         Homepage,
-        AboutMe,
-        CaseStudy
+        AboutMe: () => import('./AboutMe/AboutMe'),
+        CaseStudy: () => import('./Homepage/CaseStudy')
     },
     props: {
         currentPage: Number,
