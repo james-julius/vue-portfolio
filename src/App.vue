@@ -49,6 +49,7 @@ export default {
           let colorVars = globalState.caseStudies[currentPage  - 1].colors;
           gsap.to('.left-side', 2, {"--leftSide-bgColor": colorVars.bgColor});
           gsap.to('.color-spacer', 2, {"--leftSide-bgColor": colorVars.bgColor});
+          gsap.to('.case-study-button', 2, {"--leftSide-bgColor": colorVars.bgColor});
           gsap.to('nav', 2, {
             "--nav-bgColor": colorVars.bgColor,
             "--nav-borderColor": colorVars.navBorderColor,

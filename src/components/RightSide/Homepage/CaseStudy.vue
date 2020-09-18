@@ -10,10 +10,22 @@
         <Technologies
             :stack="stack"
         />
-        <div class="color-spacer"/>
         <div class="desktop-img">
                 <img :src="require(`@/assets/${desktopImg}`)" alt="Desktop image of site"/>
         </div> 
+        <div class="buttons">
+            <router-link to="/contact">
+                <div class="case-study-button">
+                    {{ctaButtonText}}
+                </div>
+            </router-link>
+            <a rel="noopener noreferrer" target="_blank" :href="websiteUrl">
+                <div class="case-study-button">
+                    Visit Site
+                </div>
+            </a>
+        </div>
+        <div class="color-spacer"/>
     </div>
 </template>
 
@@ -30,7 +42,9 @@ export default {
         subHeading: String,
         content: String,
         stack: Array,
-        desktopImg: String
+        desktopImg: String,
+        websiteUrl: String,
+        ctaButtonText: String
     }
 }
 </script>
@@ -63,6 +77,35 @@ export default {
         margin-left: 2vw;
         p {
             white-space: pre-line;
+        }
+    }
+    .buttons {
+        grid-area: 9/7/14/12;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            &:hover {
+                color: white;
+            }
+        }
+        .case-study-button {
+            border-radius: 5px;
+            color: var(--leftSide-bgColor);
+            border: 1px solid var(--leftSide-bgColor);
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover {
+                background-color: var(--leftSide-bgColor);
+                box-shadow: 0 0 10px var(--leftSide-bgColor);
+                color: white;
+            }
         }
     }
     .color-spacer {

@@ -9,6 +9,8 @@
                 :subHeading="caseStudy.subHeading"
                 :content="caseStudy.content"
                 :desktopImg="caseStudy.desktopImg"
+                :websiteUrl="caseStudy.iframeSrc"
+                :ctaButtonText="caseStudy.ctaButtonText"
                 :stack="caseStudy.stack"
             />
         </template>
