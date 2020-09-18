@@ -14,6 +14,7 @@ const globalState = {
             imageSrc: 'uHealthMobile.png',
             desktopImg: 'unique-health-desktop.png',
             iframeSrc: 'https://www.u-niquehealth.co.uk',
+            iframeOK: true,
             ctaButtonText: 'Get a quote for Laravel development',
             colors: {
                 bgColor: '#f74040',
@@ -30,6 +31,7 @@ const globalState = {
             imageSrc: 'cricketVisionMobile.png',
             desktopImg: 'cricketvision-desktop.png',
             iframeSrc: 'https://app.cricketvision.co.uk',
+            iframeOK: true,
             ctaButtonText: 'Get a quote for React.js development',
             colors: {
                 bgColor: 'rgb(39, 169, 79)',
@@ -46,6 +48,7 @@ const globalState = {
             imageSrc: 'vSafeMobile.png',
             desktopImg: 'volunteersafe-desktop.png',
             iframeSrc: 'https://www.volunteersafe.com',
+            iframeOK: true,
             ctaButtonText: 'Get a quote for React.js development',
             colors: {
                 bgColor: '#6074c4',
@@ -62,6 +65,7 @@ const globalState = {
             imageSrc: 'cultMiaMobile.png',
             desktopImg: 'cult-mia-desktop.png',
             iframeSrc: 'https://www.cultmia.com',
+            iframeOK: true,
             ctaButtonText: 'Get a quote for React.js development',
             colors: {
                 bgColor: '#aaa',
@@ -80,6 +84,7 @@ const globalState = {
             desktopImg: 'reli-desktop.png',
             ctaButtonText: 'Get a quote for web development',
             iframeSrc: 'https://reli.eco',
+            iframeOK: true,
             colors: {
                 bgColor: '#303030',
                 navTextColor: 'white',

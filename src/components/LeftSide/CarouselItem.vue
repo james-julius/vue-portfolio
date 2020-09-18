@@ -1,10 +1,12 @@
 <template>
-    <div :style="additionalStyle" :class="`img-container ${carouselClasses}`" @hover="handleHover(ref)">
+    <div :style="additionalStyle" :ref="`img-container-ref-${itemIndex}`" :class="`img-container ${carouselClasses}`" @hover="handleHover(ref)">
         <img :src="require(`@/assets/${imageSrc}`)" />
-        <LoadingSpinner v-if="iFrameLoading" shade="light"/>
-        <iframe :ref="`iframe-ref-${itemIndex}`" :src="loadedIFrameSrc"/>
-        <div class="scrim"/>
-        <span class="visitSiteButton" @click="setActiveIFrame(refProp)">Activate Site</span>
+        <template v-if="isCurrentIFrame">
+            <LoadingSpinner v-if="iFrameLoading" shade="light"/>
+            <iframe v-if="iFrameOK" :ref="`iframe-ref-${itemIndex}`" :src="loadedIFrameSrc" allowTransaprency="false"/>
+            <div class="scrim"/>
+            <span class="visitSiteButton" @click="setActiveIFrame(refProp)">Activate Site</span>
+        </template>
     </div>
 </template>
 
@@ -16,16 +18,18 @@ export default {
     name: 'CarouselItem',
     props: [
         'imageSrc', 
-        'iframeSrc',
-        'carouselClassList',
+        'iFrameSrc',
+        'iFrameOK',
         'previousIndex',
         'currentIndex',
         'itemIndex'
     ],
     data: function() {
             return {
-                carouselClasses: this.carouselClassList,
-                iFrameLoading: false
+                carouselClasses: 'not-selected',
+                iFrameLoading: false,
+                loadedIFrameSrc: '',
+                isCurrentIFrame: false
             }
     },
     components: {
@@ -43,18 +47,27 @@ export default {
     },
     watch: {
         currentIndex: function() {
-            (this.itemIndex === this.currentIndex) ? 
-                this.carouselClasses = 'selected' : 
-                this.carouselClasses = '';
+            if (this.itemIndex === this.currentIndex || this.itemIndex === 0 && this.previousIndex !== 1) {
+                this.carouselClasses = 'selected';
+                this.isCurrentIFrame = true;
+            } else {
+                this.isCurrentIFrame = false;
+                this.carouselClasses = 'not-selected';
+            }
         }
     },
     methods: {
         setActiveIFrame: function () {
             // Here we only load the iframe src when the active class is present. Otherwise, all iframes will load upon page load.
-            this.loadedIFrameSrc = this.iframeSrc;
+            this.loadedIFrameSrc = this.iFrameSrc;
             this.carouselClasses = 'selected active';
             this.iFrameLoading = true;
-            this.$refs[`iframe-ref-${this.itemIndex}`].onload(() => {
+            console.log('REFS', this.$refs);
+            const [iframeRef, imgContainerRef ] = [`iframe-ref-${this.itemIndex}`,`img-container-ref-${this.itemIndex}`];
+
+            // Weird glitch happens to unique health iframe's zIndex when loaded on chrome. We need to re-set the containing div's zIndex to the same to stop it.
+            this.$refs[imgContainerRef].style.zIndex = 3;
+            this.$refs[iframeRef].onload(() => {
                 console.log('iframe has loaded');
                 this.iFrameLoading = false;
             });

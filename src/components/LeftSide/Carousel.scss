@@ -73,6 +73,9 @@ $apothem: 25vw / (2 * (math.tan($PI / $n))) * 1.05;
                 transform-origin: 50% 50% (-$apothem);
                 // opacity: 0.9;
             }
+            .not-selected {
+                z-index: 0;
+            }
             @for $i from 2 through $n {
                 &:nth-child(#{$i}) {
                     transform: rotateY(-#{($i - 1) * $theta}rad);
@@ -105,6 +108,7 @@ $apothem: 25vw / (2 * (math.tan($PI / $n))) * 1.05;
                 border-radius: 25px;
             }
             &.active {
+                z-index: 2;
                 img {
                     display: none;
                 }

@@ -18,8 +18,8 @@
                 :imageSrc="item.imageSrc"
                 :currentIndex="currentIndex"
                 :previousIndex="previousIndex"
-                :iframeSrc="item.iframeSrc"
-                :carouselClassList="item.carouselClassList"
+                :iFrameSrc="item.iframeSrc"
+                :iFrameOK="item.iframeOK"
             />
         </figure>
     </div>
