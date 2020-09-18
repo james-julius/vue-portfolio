@@ -101,7 +101,7 @@ export default {
 
 <style lang="scss">
     .technologies {
-        grid-area: 1/9/11/13;
+        grid-area: 1/9/15/16;
         margin-top: 4vh;
         .tech-header {
             border-bottom: 1px solid grey;
@@ -119,21 +119,43 @@ export default {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-top: 0vh;
             .tech-header {
                 text-align: left;
                 width: 100%;
                 padding-left: 5vw;
+                height: 25%;
+                h3 {
+                    margin-top: 2.2vh;
+                }
             }
             ul {
                 display: flex;
                 flex-wrap: wrap;
+                padding-top: 2px;
+                height: 75%;
+                align-content: space-evenly;
                 li {
                     display: flex;
-                    justify-content: space-around;
-                    width: 49vw;
+                    justify-content: flex-start;
+                    min-width: 49vw;
+                    flex-grow: 1;
                     max-width: 49vw;
+                    max-height: 40px;
                     .logo-container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         margin-right: 5px;
+                        .tech-logo {
+                            max-height: 40px;
+                            max-width: 40px;
+                        }
+                        p {
+                            width: 70%;
+                            text-align: left;
+                            margin-left: 10px;
+                        }
                     }
                     .text-container {
                         font-size: .8rem;

@@ -25,6 +25,13 @@
                 </div>
             </a>
         </div>
+        <div class="mobile-button">
+            <a rel="noopener noreferrer" target="_blank" :href="websiteUrl">
+                <div class="mobile-case-study-button">
+                    Visit Site
+                </div>
+            </a>
+        </div>
         <div class="color-spacer"/>
     </div>
 </template>
@@ -79,6 +86,9 @@ export default {
             white-space: pre-line;
         }
     }
+    .mobile-button {
+        display: none;
+    }
     .buttons {
         grid-area: 9/7/14/12;
         display: flex;
@@ -94,7 +104,7 @@ export default {
         }
         .case-study-button {
             border-radius: 5px;
-            transition: 2s ease-in-out;
+            transition: .5s ease-in-out;
             color: var(--leftSide-bgColor);
             border: 1px solid var(--leftSide-bgColor);
             width: 100%;
@@ -130,14 +140,42 @@ export default {
     }
 
     @media (max-width: 750px) {
+        align-items: space-evenly;
         .headline {
             grid-area: 1/1/2/17;
+            h4 {
+                font-size: 1rem;
+            }
         }
         .content {
             grid-area: 2/1/8/17;
+            font-size: .8rem;
         }
         .technologies {
-            grid-area: 9/1/12/16;
+            grid-area: 9/1/15/17;
+        }
+        .buttons {
+            display: none;
+            margin-top: 4vh;
+            border-radius: 10px;
+        }
+        .mobile-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            grid-area: 9/7/10/13;
+            background-color: var(--leftSide-bgColor);
+            transition: 2s ease-in-out;
+            border-radius: 10px;
+            margin-top: 1.5vh;
+            height: 35px;
+            width: 80%;
+            margin-left: 3.5vw;
+            a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+            }
         }
         .desktop-img {
             display: none;

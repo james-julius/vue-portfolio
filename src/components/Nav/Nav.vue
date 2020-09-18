@@ -92,6 +92,8 @@ nav {
                 &.router-link-active {
                     background-image: linear-gradient(to bottom, var(--rightSide-bgColor), white);
                     color: darkslategray;
+                    transition: 2s ease-in-out;
+                    border-bottom: 2px solid var(--leftSide-bgColor);
                 }
             }
 
