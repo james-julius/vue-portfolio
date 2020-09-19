@@ -8,7 +8,7 @@
                Right now I'm open to new freelance projects and full-time roles. 
                <br/> <br/>
                 Before becoming a developer, I gained a degree in French & Spanish from a top 10 UK University, and led consultative sales for the UK's 3rd largest food publishing website. I love
-                seeing what you can achieve at the intersection of creativity and technology, and I'm excited at how much tech is changing the planet. When I'm not coding, you'll catch me reading,
+                seeing what you can achieve at the intersection of creativity and technology, and I'm excited by how much tech is changing the planet. When I'm not coding, you'll catch me reading,
                 cooking or exploring California's National Parks. 
             </p>
         </div>
@@ -89,7 +89,7 @@ export default {
                         imgUrl: 'php.svg'
                     },
                     {
-                        name: 'SQL (MySQL, SQLite)',
+                        name: 'SQL',
                         imgUrl: 'sql.svg'
                     }
                 ],
@@ -228,7 +228,6 @@ export default {
                 li {
                     display: flex;
                     list-style: none;
-                    vertical-align: center;
                     justify-content: flex-start;
                     width: 15vw;
                     max-height: 35px;
@@ -318,7 +317,66 @@ export default {
                 }
             }
         }
-
+    }
+    @media (max-width: 750px) {
+        grid-template: repeat(16, 1fr) / repeat(8, 1fr);
+        min-height: 1000px;
+        width: 100vw;
+        .heading {
+            grid-area: 2/1/4/9;
+            font-size: .8rem;
+            margin: 0px 5vw;
+        }
+        .intro {
+            grid-area: 5/1/6/9;
+            margin-top: 25px;
+            font-size: .95rem;
+            margin: 0px 5vw;
+        }
+        .skills {
+            grid-area: 6/1/12/9;
+            .computer, .human {
+                justify-content: space-between;
+                width: 42vw;
+                .language-icon {
+                    display: none;
+                }
+                ul {
+                    min-width: 42vw;
+                    margin: 0px 5vw;
+                    padding: 0px;
+                    li {
+                        width: 42vw;
+                        .skill-logo {
+                            width: 25%;
+                        }
+                        .skill-text {
+                            width: 75%;
+                            font-size: .95rem;
+                        }
+                    }
+                }
+            }
+        }
+        .frameworks {
+            grid-area: 12/1/17/9;
+            height: auto;
+            min-height: 375px;
+            align-items: flex-start;
+            margin-bottom: 26.5vh;
+            ul {
+                margin-top: -4vh;
+                li {
+                    min-width: 42vw;
+                    .framework-text {
+                        margin-left: 3vw;
+                        @media (max-width: 600px) {
+                            font-size: .7rem;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 </style>
