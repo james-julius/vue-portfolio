@@ -26,7 +26,7 @@ const globalState = {
             heading: "CricketVision",
             subHeading: 'A UK-based cricket coaching company.',
             content: `CricketVision manages a team of coaches for their own client-base, as well as other clubs across Hertfordshire, UK. They sought to become a tech company by automating in-house processes. \n
-                    To do so, I designed and developed the entire front-end for a coach management web-app. Built in React.js, it serves three user groups: Clubs, Coaches and Customers. Clubs manage job requests from customers, and job requests from coaches shown through a live feed of requests.`,
+                    To do so, I designed and developed the entire front-end for a coach management web-app. Built in React.js, it serves three user groups: Clubs, Coaches and Customers. Each manage their jobs in a different way through dashboards and live feeds.`,
             stack: ['html', 'css', 'react', 'strapi'],
             imageSrc: 'cricketVisionMobile.png',
             desktopImg: 'cricketvision-desktop.png',

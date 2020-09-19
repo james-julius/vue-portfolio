@@ -14,7 +14,7 @@
         </div>
         <div class="skills">
             <h3>
-                Languages <hr/>
+                My Languages <hr/>
             </h3>
             
             <div class="computer">
@@ -44,7 +44,7 @@
 
         <div class="frameworks">
             <h3>
-                Frameworks <hr/>
+                Frameworks I Use <hr/>
             </h3>
             <ul>
                 <Framework 

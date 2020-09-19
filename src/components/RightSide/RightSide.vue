@@ -14,23 +14,27 @@
                 :stack="caseStudy.stack"
             />
         </template>
+
         <template v-if="mode === 'about'">
             <AboutMe/>
         </template>
-        
+
+        <template v-if="mode === 'quote'">
+            <GetQuote/>
+        </template>
     </div>
 </template>
 
 <script>
-import Homepage from './Homepage/Homepage';
 import { globalState } from '../../Global';
 
 export default {
     name: 'RightSide',
     components: {
-        Homepage,
+        Homepage: () => import('./Homepage/Homepage'),
         AboutMe: () => import('./AboutMe/AboutMe'),
-        CaseStudy: () => import('./Homepage/CaseStudy')
+        CaseStudy: () => import('./Homepage/CaseStudy'),
+        GetQuote: () => import('./GetQuote/GetQuote')
     },
     props: {
         currentPage: Number,
