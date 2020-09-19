@@ -36,48 +36,47 @@ export default {
             const storedData = {
                 'html': {
                     name: 'HTML5',
-                    imageSrc: 'html5.png'
+                    imageSrc: 'html-5.svg'
                 },
                 'css': {
                     name: 'CSS3',
-                    imageSrc: 'CSS.png'
+                    imageSrc: 'css-3.svg'
                 },
                 'laravel': {
                     name: 'Laravel',
-                    imageSrc: 'laravel-logo.svg'
+                    imageSrc: 'laravel.svg'
                 },
                 'react': {
                     name: 'React.js',
-                    imageSrc: 'reactjs.png',
+                    imageSrc: 'react.svg',
                 },
                 'wordpress': {
                     name: 'Wordpress',
-                    imageSrc: 'wordpress.png',
-                    imgClasses: ''
+                    imageSrc: 'wordpress-icon.svg',
                 },
                 'strapi': {
                     name: 'Strapi',
                     imageSrc: 'strapi.webp',
-                    imgClasses: ''
                 },
                 'woocommerce': {
                     name: 'WooCommerce',
-                    imageSrc: 'woologo.svg',
-                    imgClasses: ''
+                    imageSrc: 'woocommerce.svg',
                 },
                 'squarespace': {
                     name: 'Squarespace',
-                    imageSrc: 'squarespace.png',
-                    imgClasses: ''
+                    imageSrc: 'squarespace.svg',
                 },
                 'shopify': {
                     name: 'Shopify',
-                    imageSrc: 'shopify.webp',
-                    imgClasses: ''
+                    imageSrc: 'shopify.svg',
+                },
+                'node': {
+                    name: 'Node.js',
+                    imageSrc: 'nodejs-icon.svg',
                 },
                 'mysql': {
                     name: 'MySQL',
-                    imageSrc: 'mysql.png'
+                    imageSrc: 'mysql.svg'
                 }
             };
             let validated = [];

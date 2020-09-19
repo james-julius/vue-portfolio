@@ -2,7 +2,7 @@
     <li>
         <span :class="'logo-container ' + logoClasses">
             <img class="tech-logo"
-                :src="require(`@/assets/tech/${imageSrc}`)" 
+                :src="require(`@/assets/frameworks/${imageSrc}`)" 
                 :alt="imageAlt"
             />
         </span>
