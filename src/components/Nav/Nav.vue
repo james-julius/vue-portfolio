@@ -3,7 +3,7 @@
         <ul class="nav-list">
             <li><router-link to="/" exact>Home</router-link></li>
             <li><router-link to="/about">About Me</router-link></li>
-            <li><router-link to="/get-quote">Get in touch</router-link></li>
+            <li><router-link to="/get-quote">Get a quote</router-link></li>
         </ul>
     </nav>
 </template>

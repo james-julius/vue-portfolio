@@ -43,7 +43,7 @@ export default {
             const randomColor = `rgb(${r},${g},${b})`;
             document.documentElement.style.setProperty('--leftSide-bgColor', randomColor);
             document.documentElement.style.setProperty('--nav-bgColor', randomColor);
-        }, 5000);
+        }, 10000);
     },
     beforeDestroy() {
         console.log('component will destroy');
