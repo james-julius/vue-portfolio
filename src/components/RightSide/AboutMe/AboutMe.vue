@@ -18,21 +18,26 @@
             </h3>
             
             <div class="computer">
-                <span>💻</span>
+                <span class="language-icon">💻</span>
                 <ul>
-                    <li>JavaScript</li>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>PHP</li>
-                    <li>MySQL, SQLite</li>
+                    <Language 
+                        v-for="(language, idx) in languages.computer"
+                        :key="idx"
+                        :name="language.name"
+                        :imgSrc="language.imgUrl"
+                    />
                 </ul>
             </div>
             <div class="human">
-                <span>🗣</span>
+                <span class="language-icon">🗣</span>
                 <ul>
-                    <li>🇬🇧 English</li>
-                    <li>🇫🇷 French</li>
-                    <li>🇪🇸 Spanish</li>
+                    <Language 
+                        v-for="(language, idx) in languages.human"
+                        :key="idx"
+                        :isEmoji="true"
+                        :emoji="language.emoji"
+                        :name="language.name"
+                    />
                 </ul>
             </div>
         </div>
@@ -55,14 +60,57 @@
 
 <script>
 import Framework from './Framework';
+import Language from './Language';
 
 export default {
     name: 'AboutMe',
     components: {
-        Framework
+        Framework,
+        Language
     },
     data: function() {
         return {
+            languages: {
+                computer: [
+                    {
+                        name: 'JavaScript',
+                        imgUrl: 'javascript.svg'
+                    },
+                    {
+                        name: 'HTML',
+                        imgUrl: 'html-5.svg'
+                    },
+                    {
+                        name: 'CSS',
+                        imgUrl: 'css-3.svg'
+                    },
+                    {
+                        name: 'PHP',
+                        imgUrl: 'php.svg'
+                    },
+                    {
+                        name: 'SQL (MySQL, SQLite)',
+                        imgUrl: 'sql.svg'
+                    }
+                ],
+                human: [
+                    {
+                        name: 'English',
+                        emoji: '🇬🇧',
+                        imgUrl: 'react.svg'
+                    },
+                    {
+                        name: 'French',
+                        emoji: '🇫🇷',
+                        imgUrl: 'vue.svg'
+                    },
+                    {
+                        name: 'Spanish',
+                        emoji: '🇪🇸',
+                        imgUrl: 'laravel.svg'
+                    }
+                ],
+            },
             frameworks: [
                     {
                         name: 'React.js',
@@ -162,7 +210,7 @@ export default {
             display: flex;
             width: 30%;
             height: 19vh;
-            span {
+            .language-icon {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -180,6 +228,29 @@ export default {
                 li {
                     display: flex;
                     list-style: none;
+                    vertical-align: center;
+                    justify-content: flex-start;
+                    width: 15vw;
+                    max-height: 35px;
+                    .skill-logo {
+                        width: 15%;
+                        font-size: 2rem;
+                        img {
+                            max-height: 25px;
+                            max-width: 25px;
+                        }
+                    }
+                    .skill-text {
+                        width: 70%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        p {
+                            text-align: left;
+                            vertical-align: center;
+                            font-weight: bold;
+                        }
+                    }
                 }
             }
         }
