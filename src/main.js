@@ -14,7 +14,6 @@ Vue.use(Vuelidate);
 // Vue Router setup
 import routes from './routes.js';
 const router = new VueRouter({
-  mode: 'history',
   routes
 });
 
