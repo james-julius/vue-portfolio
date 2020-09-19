@@ -1,6 +1,6 @@
 <template>
     <div 
-        :class="`left-side ${classNames}`" 
+        :class="`left-side ${extraClassNames}`" 
         ref="leftSide"
         :style="leftSideStyle"
         >
@@ -27,7 +27,6 @@ export default {
     },
     data: function() {
         return {
-            classNames: this.extraClassNames,
             leftSideStyle: ''
         }
     },
