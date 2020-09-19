@@ -93,7 +93,7 @@ export default {
         grid-area: 9/7/14/12;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: flex-start;
 
         a {
             text-decoration: none;
@@ -108,8 +108,11 @@ export default {
             color: var(--leftSide-bgColor);
             border: 1px solid var(--leftSide-bgColor);
             width: 100%;
+            max-width: 17.5vw;
             height: 50px;
             display: flex;
+            margin-top: 4vh;
+            margin-left: 4vw;
             align-items: center;
             justify-content: center;
             &:hover {
@@ -139,6 +142,11 @@ export default {
         }
     }
 
+    @media (max-width: 600px) {
+        .mobile-button {
+            height: 30px !important;
+        }
+    }
     @media (max-width: 750px) {
         align-items: space-evenly;
         .headline {
@@ -149,7 +157,8 @@ export default {
         }
         .content {
             grid-area: 2/1/8/17;
-            font-size: .8rem;
+            // font-size: .8rem;
+            font-size: 3.7vw;
         }
         .technologies {
             grid-area: 9/1/15/17;
@@ -170,7 +179,7 @@ export default {
             margin-top: 1.5vh;
             height: 35px;
             width: 80%;
-            margin-left: 3.5vw;
+            margin-left: 7vw;
             a {
                 text-decoration: none;
                 color: white;

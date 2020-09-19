@@ -201,6 +201,9 @@ export default {
             grid-area: 7/2/12/11;
             align-items: center;
             margin: 5px auto;
+            @media (max-width: 600px) {
+                margin-top: 5vh;
+            }
             width: 100%;
             label {
                 width: 100%;
@@ -217,6 +220,6 @@ export default {
                 padding-right: 5px;
             }
         }
-}
+    }
 }
 </style>

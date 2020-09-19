@@ -5,7 +5,10 @@
         </div>
         <div class="sub-heading">
             <h3>Full-Stack Web Developer based in Los Angeles, CA</h3>
-            <h4>e: jamesdarby7@gmail.com | t: (323) 203-9665</h4>
+            <h4>
+                <span class="contact-icon-text"><img :src="require('@/assets/email.svg')"/> jamesdarby7@gmail.com </span>
+                <span class="contact-icon-text"><img :src="require('@/assets/phone.svg')"/> (323) 203-9665 </span>
+            </h4>
         </div>
         <DynamicSocials/>
         <div class="arrow">
@@ -51,7 +54,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .pageOne {
     height: 100vh;
     width: 100%;
@@ -76,7 +79,19 @@ export default {
         padding-left: 2vw;
         grid-area: 6/1/7/8;
         h4 {
+            display: flex;
+            flex-direction: column;
             margin: 7px 0px 7px 0px;
+            width: 100%;
+            .contact-icon-text {
+                display: inline-flex;
+                margin-top: 5px;
+                img {
+                    max-height: 20px;
+                    width: auto;
+                    margin-right: 10px;
+                }
+            }
         }
     }
 
@@ -155,25 +170,44 @@ export default {
     }
     @media (max-width: 750px) {
         .headline {
-            grid-area: 3/1/5/16;
+            grid-area: 3/1/6/16;
             h1 {
                 font-size: 2.5rem;
+                @media (max-width: 600px) {
+                    font-size: 2rem;
+                }
             }
         }
 
         .sub-heading {
             grid-area: 6/1/8/11;
+            margin-top: 5vh;
+            @media (max-width: 600px) {
+            grid-area: 5/1/6/11;
+            }
         }
         .dynamic-socials {
-            grid-area: 8/1/9/4;
+            grid-area: 9/1/10/4;
             margin-left: 2vw;
+            @media (max-width: 600px) {
+                grid-area: 7/1/8/4;
+            }
         }
         .arrow {
             grid-area: 10/1/12/13;
             display: inline-flex;
             flex-direction: row;
             padding-right: 10px;
+            @media (max-width: 600px) {
+                grid-area:  7/1/9/13;
+            }
         }
+    }
+}
+
+@media (max-width: 750px) {
+    html body #app .page-container .left-side {
+        height: 15vh;
     }
 }
 </style>
