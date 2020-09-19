@@ -62,6 +62,15 @@ export default {
     width: 100%;
     display: grid;
     grid-template: repeat(16, 1fr) / repeat(12, 1fr);
+    &:last-child {
+        &:after {
+            position: absolute;
+            left: 5px;
+            bottom: 1vh;
+            height: 20px;
+            content: "© James Julius Darby. All rights reserved."
+        }
+    }
     h1 {
         font-size: 3rem;
     }

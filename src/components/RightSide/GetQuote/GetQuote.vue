@@ -16,19 +16,19 @@
                 <b>{{this.errors[0]}}</b>
             </p>
             <label for="name">Name: 
-                <input name="name" v-bind="name" type="text" placeholder="Your name"/>
+                <input name="name" v-model="name" type="text" placeholder="Your name"/>
             </label>
 
             <label for="email">Email:
-                <input name="email" v-bind="email" type="text" placeholder="Your email"/>
+                <input name="email" v-model="email" type="text" placeholder="Your email"/>
             </label>
 
             <label for="Phone">Phone:
-                <input name="Phone" v-bind="phone" type="textarea" placeholder="Your phone number"/>
+                <input name="Phone" v-model="phone" type="textarea" placeholder="Your phone number"/>
             </label>
 
             <label for="Project_Info">Additional Info:
-                <textarea name="Project_Info" class="project-info" v-bind="projectInfo" type="textarea" placeholder="Project information..."/>
+                <textarea name="Project_Info" class="project-info" v-model="projectInfo" type="textarea" placeholder="Project information..."/>
             </label>
             <input type="submit" 
                    class="form-button" 
@@ -36,7 +36,7 @@
             />
         </form>
         <div class="thankyou-message" v-else>
-            <h4>Thanks for getting in touch. Speak soon.</h4>
+            <h4>Thanks for getting in touch. I'll get back to you within 24 hours.</h4>
         </div>
     </div>
 </template>
