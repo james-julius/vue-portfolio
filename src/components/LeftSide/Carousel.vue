@@ -43,6 +43,8 @@ export default {
         if (this.isSafari) {
             console.log('will edit transformOrigin')
             this.$refs.figure.style.transformOrigin = '50% 50%';
+            console.log(this.$refs.carousel.style);
+            this.$refs.carousel.style.transform = 'scale3d(0.8, 0.8, 0.8)';
         }
     },
     computed: {

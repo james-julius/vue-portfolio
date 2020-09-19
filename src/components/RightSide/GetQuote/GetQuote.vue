@@ -11,16 +11,16 @@
                     
             </p>
         </div>
-        <form v-if="notSubmitted" action="https://script.google.com/macros/s/AKfycbz9Co-qCGwl-FwRn9ceQAULKdTsEkGm3PR-ZPKTj7r2G-D9IfI/exec" @submit="validateForm">
+        <form v-if="notSubmitted" @submit.prevent="validateForm">
             <p v-if="errors.length">
                 <b>{{this.errors[0]}}</b>
             </p>
-            <label for="Name">Name: 
-                <input name="Name" v-bind="name" type="text" placeholder="Your name"/>
+            <label for="name">Name: 
+                <input name="name" v-bind="name" type="text" placeholder="Your name"/>
             </label>
 
-            <label for="Email">Email:
-                <input name="Email" v-bind="email" type="text" placeholder="Your email"/>
+            <label for="email">Email:
+                <input name="email" v-bind="email" type="text" placeholder="Your email"/>
             </label>
 
             <label for="Phone">Phone:
@@ -33,7 +33,6 @@
             <input type="submit" 
                    class="form-button" 
                    value="Get in touch"
-                   @click="validateForm()"
             />
         </form>
         <div class="thankyou-message" v-else>
@@ -57,10 +56,20 @@ export default {
             notSubmitted: true
         }
     },
+    validations: {
+        name: {
+            required,
+            minLength: minLength(2)
+        },
+        email: {
+            required,
+            email
+        }
+    },
     methods: {
-        validateForm(e) {
-            e.preventDefault();
+        validateForm() {
             this.$v.$touch()
+            console.log(this.$v);
             if (this.$v.$invalid) {
                 this.errors.push('Please double check your entries!');
             } else {
@@ -75,16 +84,6 @@ export default {
                     this.notSubmitted = false;
                 });
             }
-        }
-    },
-    validations: {
-        name: {
-            required,
-            minLength: minLength(4)
-        },
-        email: {
-            required,
-            email
         }
     }
 }
