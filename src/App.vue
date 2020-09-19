@@ -21,8 +21,8 @@ export default {
       // Pages are 90vh
       let currentPage = Math.floor(currentScroll / pageHeight);
       if (currentPage !== this.prevPage) {
-        console.log('prevPage: ', this.prevPage);
-        console.log('page is now: ', currentPage);
+        // console.log('prevPage: ', this.prevPage);
+        // console.log('page is now: ', currentPage);
         this.prevPage = currentPage;
         this.currentPage = currentPage;
         globalState.setCurrentPage(currentPage);
@@ -34,13 +34,13 @@ export default {
       },100)
     },
     handleColorChange(currentPage) {
-        const colorVars = globalState.caseStudies[currentPage  - 1].colors;
         if (currentPage === 0) {
           document.documentElement.style.setProperty('--leftSide-bgColor', 'crimson');
           document.documentElement.style.setProperty('--nav-bgColor', 'crimson');
           document.documentElement.style.setProperty('--nav-borderColor', 'white');
           document.documentElement.style.setProperty('--nav-textColor', 'white');
         } else {
+          const colorVars = globalState.caseStudies[currentPage  - 1].colors;
           document.documentElement.style.setProperty('--leftSide-bgColor', colorVars.bgColor);
           document.documentElement.style.setProperty('--nav-bgColor', colorVars.bgColor);
           document.documentElement.style.setProperty('--nav-borderColor', colorVars.navBorderColor);

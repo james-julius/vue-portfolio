@@ -46,7 +46,6 @@ export default {
         }, 10000);
     },
     beforeDestroy() {
-        console.log('component will destroy');
        window.clearInterval(this.letTheColorsKeepFlowing);
     },
     components: {
