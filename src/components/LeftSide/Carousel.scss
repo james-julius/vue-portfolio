@@ -66,6 +66,12 @@ $apothem: 25vw / (2 * (math.tan($PI / $n))) * 1.05;
             align-items: center;
             justify-content: center;
             position: relative;
+            // First image of carousel doesn't translate properly on mobile. This fixes that.
+            @media (max-width: 750px) {
+                &:first-of-type {
+                    transform: translateZ($apothem);
+                }
+            }
             &:not(:first-of-type) {
                 position: absolute;
                 left: 0;

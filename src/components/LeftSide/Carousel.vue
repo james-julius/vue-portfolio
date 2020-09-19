@@ -46,6 +46,13 @@ export default {
             console.log(this.$refs.carousel.style);
             this.$refs.carousel.style.transform = 'scale3d(0.8, 0.8, 0.8)';
         }
+        // There are also some difficulties on mobile, so this style is applied to fix that
+        if (window.innerWidth < 750) {
+            console.log('will edit transformOrigin')
+            this.$refs.figure.style.transformOrigin = '50% 50%';
+            console.log(this.$refs.carousel.style);
+            this.$refs.carousel.style.transform = 'scale3d(0.97, 0.97, 0.97)';
+        }
     },
     computed: {
             figureStyle() {
@@ -53,6 +60,8 @@ export default {
                 // This also needs to happen in the first carouselItem.
                 if (this.isSafari) {
                     return 'transform-origin: 50% 50% 50%;';
+                } else if (window.innerWidth < 750) {
+                    return 'transform-origin: 0% 0% 0%;';
                 } else {
                     return ''
                 }
