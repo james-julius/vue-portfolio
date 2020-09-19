@@ -3,9 +3,9 @@
         <img :src="require(`@/assets/${imageSrc}`)" />
         <template v-if="isCurrentIFrame">
             <LoadingSpinner v-if="iFrameLoading" shade="light"/>
-            <iframe v-if="iFrameOK" :ref="`iframe-ref-${itemIndex}`" :src="loadedIFrameSrc" allowTransaprency="false"/>
+            <iframe v-if="iFrameOK" :ref="`iframe-ref-${itemIndex}`" :src="loadedIFrameSrc" />
             <div class="scrim"/>
-            <span class="visitSiteButton" @click="setActiveIFrame(refProp)">Activate Site</span>
+            <span class="visitSiteButton" @click="setActiveIFrame()">Activate Site</span>
         </template>
     </div>
 </template>
@@ -24,6 +24,14 @@ export default {
         'currentIndex',
         'itemIndex'
     ],
+    mounted() {
+        // We need to make sure the first iframe is selectable upon page load. If not, it is only selected when 
+        // the index comes back to it.
+        if(this.itemIndex === 0) {
+            this.carouselClasses = 'selected';
+            this.isCurrentIFrame = true;
+        }
+    },
     data: function() {
             return {
                 carouselClasses: 'not-selected',
@@ -49,7 +57,7 @@ export default {
         currentIndex: function() {
             if (this.itemIndex === this.currentIndex || this.itemIndex === 0 && this.previousIndex !== 1) {
                 this.carouselClasses = 'selected';
-                this.isCurrentIFrame = true;
+                 if (this.iFrameOK) this.isCurrentIFrame = true;
             } else {
                 this.isCurrentIFrame = false;
                 this.carouselClasses = 'not-selected';
@@ -62,13 +70,11 @@ export default {
             this.loadedIFrameSrc = this.iFrameSrc;
             this.carouselClasses = 'selected active';
             this.iFrameLoading = true;
-            console.log('REFS', this.$refs);
             const [iframeRef, imgContainerRef ] = [`iframe-ref-${this.itemIndex}`,`img-container-ref-${this.itemIndex}`];
 
             // Weird glitch happens to unique health iframe's zIndex when loaded on chrome. We need to re-set the containing div's zIndex to the same to stop it.
             this.$refs[imgContainerRef].style.zIndex = 3;
-            this.$refs[iframeRef].onload(() => {
-                console.log('iframe has loaded');
+            this.$refs[iframeRef].addEventListener('load', () => {
                 this.iFrameLoading = false;
             });
         },

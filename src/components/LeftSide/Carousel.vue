@@ -41,16 +41,16 @@ export default {
         // We test the browser to see if it's safari, and apply different 3d rotation css
         // This also needs to happen in the first carouselItem.
         if (this.isSafari) {
-            console.log('will edit transformOrigin')
+            // console.log('will edit transformOrigin')
             this.$refs.figure.style.transformOrigin = '50% 50%';
-            console.log(this.$refs.carousel.style);
+            // console.log(this.$refs.carousel.style);
             this.$refs.carousel.style.transform = 'scale3d(0.8, 0.8, 0.8)';
         }
         // There are also some difficulties on mobile, so this style is applied to fix that
         if (window.innerWidth < 750) {
-            console.log('will edit transformOrigin')
+            // console.log('will edit transformOrigin')
             this.$refs.figure.style.transformOrigin = '50% 50%';
-            console.log(this.$refs.carousel.style);
+            // console.log(this.$refs.carousel.style);
             this.$refs.carousel.style.transform = 'scale3d(0.97, 0.97, 0.97)';
         }
     },

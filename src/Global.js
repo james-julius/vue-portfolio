@@ -65,7 +65,7 @@ const globalState = {
             imageSrc: 'cultMiaMobile.jpeg',
             desktopImg: 'cult-mia-desktop.jpeg',
             iframeSrc: 'https://www.cultmia.com',
-            iframeOK: true,
+            iframeOK: false,
             ctaButtonText: 'Get a quote for React.js development',
             colors: {
                 bgColor: '#aaa',
