@@ -3,6 +3,7 @@
         <Nav :currentPage="currentPage"/>
         <LeftSide 
             mode="particles"
+            extraClassNames="mobile-short"
             :currentPage="currentPage"
         />
         <RightSide

@@ -4,6 +4,7 @@
         <LeftSide 
             mode="particles"
             :currentPage="currentPage"
+            extraClassNames="mobile-short"
         />
         <RightSide 
             :currentPage="currentPage"

@@ -22,11 +22,12 @@ export default {
     props: {
         image: Object,
         currentPage: Number,
-        mode: String
+        mode: String,
+        extraClassNames: String
     },
     data: function() {
         return {
-            classNames: '',
+            classNames: this.extraClassNames,
             leftSideStyle: ''
         }
     },

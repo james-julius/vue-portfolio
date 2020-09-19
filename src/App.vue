@@ -137,6 +137,9 @@ body {
         left: 0;
         position: fixed;
         z-index: 5;
+        &.mobile-short {
+          height: 15vh;
+        }
         .carousel {
           pointer-events: none;
           padding: 5px;
