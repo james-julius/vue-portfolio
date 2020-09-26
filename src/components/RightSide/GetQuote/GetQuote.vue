@@ -116,7 +116,7 @@ export default {
             input[type=submit] {
                 position: relative;
                 top: 25px;
-                width: 85vw;
+                width: 88vw;
                 
             }
         }
