@@ -101,7 +101,7 @@ export default {
         display: flex;
         flex-direction: column;
         padding-top: 8vh;
-        margin-bottom: 5vh;
+        margin-bottom: 15vh;
 
         form {
             max-width: 85vw;
