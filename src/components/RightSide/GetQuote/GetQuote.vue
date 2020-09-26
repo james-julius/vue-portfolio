@@ -101,14 +101,20 @@ export default {
         display: flex;
         flex-direction: column;
         padding-top: 8vh;
+        margin-bottom: 5vh;
 
         form {
             max-width: 85vw;
             position: relative;
             right: 2vw;
-            label input {
-                min-width: 85vw;
-                max-width: 85vw;
+            label {
+                input {
+                    min-width: 85vw;
+                    max-width: 85vw;
+                }
+                input[type=submit] {
+                    margin-top: 5px;
+                }
             }
         }
     }

@@ -322,7 +322,7 @@ export default {
         grid-template: repeat(16, 1fr) / repeat(8, 1fr);
         min-height: 1000px;
         width: 100vw;
-        margin-bottom: 20vh;
+        margin-bottom: 25vh;
         .heading {
             grid-area: 2/1/4/9;
             font-size: .8rem;
