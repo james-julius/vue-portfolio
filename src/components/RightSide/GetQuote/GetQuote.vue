@@ -100,6 +100,7 @@ export default {
     @media (max-width: 750px) {
         display: flex;
         flex-direction: column;
+        padding-top: 8vh;
 
         form {
             max-width: 85vw;
