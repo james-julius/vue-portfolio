@@ -96,6 +96,21 @@ export default {
     width: 50vw;
     display: grid;
     grid-template: repeat(12, 1fr) / repeat(8, 1fr);
+
+    @media (max-width: 750px) {
+        display: flex;
+        flex-direction: column;
+
+        form {
+            max-width: 85vw;
+            position: relative;
+            right: 2vw;
+            label input {
+                min-width: 85vw;
+                max-width: 85vw;
+            }
+        }
+    }
     .heading {
         grid-area: 2/1/4/8;
         text-align: left;
@@ -183,7 +198,6 @@ export default {
     }
     @media (max-width: 750px) {
         grid-template: repeat(16, 1fr) / repeat(12, 1fr);
-        min-height: 1000px;
         width: 100vw;
         .heading {
             grid-area: 2/1/3/13;
@@ -197,7 +211,7 @@ export default {
             margin: 0px 5vw;
         }
         form, .thankyou-message {
-            grid-area: 7/2/12/11;
+            grid-area: 8/2/13/11;
             align-items: center;
             margin: 5px auto;
             @media (max-width: 600px) {
