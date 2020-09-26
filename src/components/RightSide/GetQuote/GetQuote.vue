@@ -114,7 +114,8 @@ export default {
                 }
             }
             input[type=submit] {
-                margin-top: 15px;
+                position: relative;
+                top: 15px;
             }
         }
     }
