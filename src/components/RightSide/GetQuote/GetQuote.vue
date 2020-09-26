@@ -115,7 +115,9 @@ export default {
             }
             input[type=submit] {
                 position: relative;
-                top: 15px;
+                top: 25px;
+                width: 85vw;
+                
             }
         }
     }
