@@ -51,7 +51,7 @@ export default {
             // console.log('will edit transformOrigin')
             this.$refs.figure.style.transformOrigin = '50% 50%';
             // console.log(this.$refs.carousel.style);
-            this.$refs.carousel.style.transform = 'scale3d(0.97, 0.97, 0.97)';
+            this.$refs.carousel.style.transform = 'scale3d(0.97, 0.97, 0.97) translateY(10px)';
         }
     },
     computed: {

@@ -29,6 +29,7 @@ $apothem: 25vw / (2 * (math.tan($PI / $n))) * 1.05;
         --item-height: calc(22vw * 1.9);
     }
     // var(--item-height): var(--item-width) * var(--iPhone11Ratio);
+    
 }
 .carousel {
     width: 100%;
