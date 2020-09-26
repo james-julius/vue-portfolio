@@ -112,10 +112,9 @@ export default {
                     min-width: 85vw;
                     max-width: 85vw;
                 }
-                input[type=submit] {
-                    position: relative;
-                    top: 15px;
-                }
+            }
+            input[type=submit] {
+                margin-top: 15px;
             }
         }
     }
