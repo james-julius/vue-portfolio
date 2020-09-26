@@ -77,7 +77,7 @@ const globalState = {
             heading: "Reli",
             subHeading: `ReLi is making the world's next generation of eco-friendly technology, beginning with phone cases.`,
             content: `I've been working with ReLi to customise their Squarespace site, and optimise it to maximise conversions across their e-commerce funnel. \n
-            To date, I've installed all marketing tech integrations for the company and have been advising on digital marketing strategy.
+            To date, I've installed all marketing tech integrations for the company and have been advising on digital marketing strategy. \n
             This includes installing Inspectlet, Google Tag Manager, Analytics and Optimize. We've worked together to code a series of cross-site A/B/C optimisations that target different consumer audiences and channes.`,
             stack: ['squarespace', 'html', 'css'],
             imageSrc: 'reliMobile.jpeg',
