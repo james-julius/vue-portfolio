@@ -60,6 +60,7 @@ export default {
     width: 100%;
     display: grid;
     grid-template: repeat(16, 1fr) / repeat(12, 1fr);
+    overflow: scroll;
     h1 {
         font-size: 3rem;
     }
