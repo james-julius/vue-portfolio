@@ -6,7 +6,7 @@
         <div class="sub-heading">
             <h3>Full-Stack Web Developer based in Los Angeles, CA</h3>
             <h4>
-                <span class="contact-icon-text"><img :src="require('@/assets/email.svg')"/> james@jamesjuliusdarby.com </span>
+                <span class="contact-icon-text"><img :src="require('@/assets/email.svg')"/> james@juliusdarby.com </span>
                 <span class="contact-icon-text"><img :src="require('@/assets/phone.svg')"/> (323) 203-9665 </span>
             </h4>
         </div>
